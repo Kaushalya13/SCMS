@@ -1,0 +1,103 @@
+.edge-button {
+    -fx-background-color:  #70a1ff;
+    -fx-background-radius: 50px 50px 50px 50px;
+}
+.edge-button:hover {
+    -fx-background-color: #000000;
+    -fx-background-radius: 50px 50px 50px 50px;
+}
+
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom left, #130f40, #7ed6df );
+}
+
+
+.linear-Colour
+{
+    -fx-background-color: linear-gradient(to bottom left,#30336b,  #30336b,#30336b);
+}
+
+
+.linear-cw
+{
+    -fx-background-color: linear-gradient(to bottom left,#ecf0f1,#7f8c8d);
+}
+
+.linear-cb
+{
+    -fx-background-color: linear-gradient(to bottom left,#2e86de,#00d2d3);
+}
+
+
+.linear-ccc
+{
+    -fx-background-color: linear-gradient(to bottom left,#4a69bd,#78e08f);
+}
+
+
+.linear-cgr
+{
+    -fx-background-color: linear-gradient(to bottom left,#55efc4,#ff7675);
+}
+
+.textfield
+{
+    -fx-prompt-text-fill: black;
+}
+
+
+.edgez-button {
+    -fx-border-radius-color:#0652DD;
+    -fx-background-radius:   10px 10px 10px 10px;
+}
+
+.btnSide {
+
+    -fx-text-fill: #ffffff;
+}
+
+
+.btnSide:hover {
+    -fx-background-color: #130f40;
+    -fx-text-fill: #c7ecee;
+}
+
+.linear-square1
+{
+    -fx-background-color: linear-gradient(to bottom left,#00d2d3,#54a0ff);
+}
+.linear-square2
+{
+    -fx-background-color: linear-gradient(to bottom left,#fad390,#eb4d4b);
+}
+.linear-square3
+{
+    -fx-background-color: linear-gradient(to bottom left,#34e7e4,#0be881);
+}
+.linear-square4
+{
+    -fx-background-color: linear-gradient(to bottom left,#FFC312,#cc8e35);
+}
+.linear-barchart
+{
+    -fx-background-color: linear-gradient(to bottom left,#81ecec, #a29bfe);
+}
+.linear-dashpane
+{
+    -fx-background-color: linear-gradient(to bottom left ,#6c5ce7,#74b9ff);
+}
+.linear-dashpane2
+{
+    -fx-background-color: linear-gradient(to bottom left,#2ed573,#7bed9f,#48dbfb);
+}
+
+.linear-dashpane3
+{
+    -fx-background-color: linear-gradient(to bottom left,#006266,#009432,#48dbfb);
+}
+
+.linear-log
+{
+    -fx-background-color: linear-gradient(to bottom left,#009432,#079992,#7bed9f);
+}

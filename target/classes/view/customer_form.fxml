@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="655.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.scms.controller.CustomerFormController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="497.0" layoutY="20.0" prefHeight="37.0" prefWidth="243.0" text="Customer  Manage Form" textAlignment="CENTER" textFill="#650c0c">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="79.0" prefHeight="28.0" prefWidth="113.0" text="Customer_id" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtId" layoutX="18.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <Label layoutX="346.0" layoutY="79.0" prefHeight="28.0" prefWidth="123.0" text="Customer_name" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtName" layoutX="345.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtNic" layoutX="655.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtAddress" layoutX="973.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <Label layoutX="657.0" layoutY="79.0" prefHeight="28.0" prefWidth="123.0" text="Nic" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="977.0" layoutY="79.0" prefHeight="28.0" prefWidth="123.0" text="Address" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="176.0" prefHeight="28.0" prefWidth="123.0" text="Email" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmail" layoutX="18.0" layoutY="204.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtContactNo" layoutX="344.0" layoutY="204.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <Label layoutX="346.0" layoutY="176.0" prefHeight="28.0" prefWidth="123.0" text="Contact_no" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblCustomer" layoutX="68.0" layoutY="328.0" prefHeight="241.0" prefWidth="1117.0">
+        <columns>
+          <TableColumn fx:id="colCustmoer_id" prefWidth="110.0" text="Customer_id" />
+          <TableColumn fx:id="colCustomer_name" minWidth="0.0" prefWidth="164.0" text="Customer_name" />
+            <TableColumn fx:id="colNic" minWidth="0.0" prefWidth="203.0" text="Nic" />
+            <TableColumn fx:id="colAddress" minWidth="0.0" prefWidth="193.0" text="Address" />
+            <TableColumn fx:id="colEmail" minWidth="0.0" prefWidth="263.0" text="Email" />
+            <TableColumn fx:id="colContact_no" minWidth="0.0" prefWidth="193.0" text="contact_no" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="1021.0" layoutY="259.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
+      <JFXButton layoutX="1108.0" layoutY="259.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
+      <JFXButton layoutX="934.0" layoutY="259.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="905.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8-search-25.png" />
+         </image>
+      </ImageView>
+      <JFXTextField layoutX="934.0" layoutY="216.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" styleClass="textfield" stylesheets="@../style/Style.css" />
+      <Label layoutX="630.0" layoutY="176.0" prefHeight="28.0" prefWidth="123.0" text="UserId" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserId" layoutX="627.0" layoutY="206.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+   </children>
+   <effect>
+      <DropShadow color="#ebc2c2" />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="655.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.scms.controller.CompanyFormController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="498.0" layoutY="30.0" prefHeight="37.0" prefWidth="243.0" text="Company Manage Form" textFill="#650c0c">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="125.0" layoutY="87.0" prefHeight="29.0" prefWidth="129.0" text="Company_id" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font></Label>
+      <Label layoutX="908.0" layoutY="87.0" prefHeight="29.0" prefWidth="129.0" text="Type" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font></Label>
+      <Label layoutX="514.0" layoutY="87.0" prefHeight="29.0" prefWidth="129.0" text="Company_name" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font></Label>
+      <JFXTextField layoutX="125.0" layoutY="125.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField layoutX="514.0" layoutY="125.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <ComboBox layoutX="908.0" layoutY="125.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField layoutX="868.0" layoutY="204.0" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
+      <ImageView fitHeight="29.0" fitWidth="24.0" layoutX="838.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="870.0" layoutY="255.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
+      <JFXButton layoutX="957.0" layoutY="255.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
+      <JFXButton layoutX="1044.0" layoutY="255.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
+      <TableView layoutX="304.0" layoutY="329.0" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+          <TableColumn prefWidth="172.0" text="Company_id" />
+          <TableColumn prefWidth="218.0" text="Company_name" />
+            <TableColumn prefWidth="208.0" text="Type" />
+        </columns>
+      </TableView>
+   </children>
+   <effect>
+      <DropShadow color="#ebc2c2" />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1174.0" styleClass="linear-dashpane" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.scms.controller.LoginPageFormController">
+   <children>
+      <AnchorPane layoutX="108.0" layoutY="108.0" prefHeight="526.0" prefWidth="958.0" style="-fx-background-color: #ffffff;">
+         <effect>
+            <DropShadow height="115.85" radius="78.995" width="202.13" />
+         </effect>
+         <children>
+            <ImageView fitHeight="526.0" fitWidth="498.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/3524036.jpg" />
+               </image>
+            </ImageView>
+            <PasswordField layoutX="604.0" layoutY="266.0" prefHeight="46.0" prefWidth="339.0" promptText="Password" style="-fx-border-color: #74b9ff;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </PasswordField>
+            <TextField layoutX="603.0" layoutY="179.0" prefHeight="46.0" prefWidth="339.0" promptText="Username" style="-fx-border-color: #74b9ff;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="549.0" layoutY="68.0" prefHeight="56.0" prefWidth="354.0" text="WELCOME BACK  !">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="561.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/icons8-user-90.png" />
+               </image></ImageView>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="561.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/icons8-secure-50%20(1).png" />
+               </image>
+            </ImageView>
+            <Label layoutX="554.0" layoutY="123.0" prefHeight="27.0" prefWidth="161.0" text="Login to continue" textFill="#1e0303">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="780.0" layoutY="396.0" prefHeight="27.0" prefWidth="153.0" text="Forget Password ?" textFill="#140303">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnlogin" layoutX="603.0" layoutY="393.0" onAction="#btnLoginOnAction" prefHeight="31.0" prefWidth="87.0" style="-fx-background-color: #00a8ff;" styleClass="edge-button" stylesheets="@../style/Style.css" text="Log In" textFill="#221d1d">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

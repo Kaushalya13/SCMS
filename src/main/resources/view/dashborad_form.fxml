@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="655.0" prefWidth="1260.0" style="-fx-background-color: #d1d8e0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.scms.controller.DashBoradFormController">
+   <children>
+      <Label layoutX="17.0" layoutY="25.0" prefHeight="55.0" prefWidth="202.0" text="    Dashborad">
+         <graphic>
+            <ImageView fitHeight="55.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/icons8-dashboard-64%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Berlin Sans FB Bold" size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="954.0" layoutY="327.0" prefHeight="212.0" prefWidth="234.0" style="-fx-border-color: blue; -fx-background-color: #dcdde1;">
+         <children>
+            <ImageView fitHeight="221.0" fitWidth="230.0" layoutX="2.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/3tz60m.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="118.0" layoutY="328.0" prefHeight="204.0" prefWidth="322.0" style="-fx-border-color: blue; -fx-background-color: #dcdde1;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="254.0" fitWidth="284.0" layoutX="21.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/WhatsApp%20Image%202023-04-07%20at%2009.06.12.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="127.0" layoutY="126.0" prefHeight="116.0" prefWidth="234.0" style="-fx-border-color: blue; -fx-background-color: #dcdde1;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="115.0" text="Weekly Salary" textFill="#030717">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="54.0" prefHeight="34.0" prefWidth="136.0" text=" $  15 , 0000" textFill="#5b2424">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="55.0" fitWidth="64.0" layoutX="165.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/market-icon-3.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+      <AnchorPane layoutX="491.0" layoutY="346.0" prefHeight="186.0" prefWidth="333.0" style="-fx-border-color: blue; -fx-background-color: #dcdde1;">
+         <children>
+            <ImageView fitHeight="212.0" fitWidth="299.0" layoutX="17.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/WhatsApp%20Image%202023-04-07%20at%2009.07.04.jpg" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+      <AnchorPane layoutX="937.0" layoutY="126.0" prefHeight="116.0" prefWidth="234.0" style="-fx-border-color: blue; -fx-background-color: #dcdde1;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="169.0" text="Daily Employee Count">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="76.0" layoutX="24.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/icons8-employee-64%20(1).png" />
+               </image>
+            </ImageView>
+            <Label layoutX="111.0" layoutY="60.0" prefHeight="28.0" prefWidth="97.0" text="Count : 7" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+   </children>
+   <effect>
+      <DropShadow color="#e89a9a" />
+   </effect>
+</AnchorPane>
