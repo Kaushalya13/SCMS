@@ -48,33 +48,34 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField layoutX="677.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="63.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="372.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="372.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="63.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="677.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <ComboBox layoutX="975.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="935.0" layoutY="219.0" prefHeight="31.0" prefWidth="251.0" promptText="Serach here" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtPassword" layoutX="677.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtId" layoutX="63.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtNic" layoutX="372.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtName" layoutX="372.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtEmail" layoutX="63.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtContact_no" layoutX="677.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <ComboBox fx:id="cmbRanks" layoutX="975.0" layoutY="109.0" onAction="#cmbRanksOnAction" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtSerach" layoutX="935.0" layoutY="219.0" onAction="#btnSerachOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Serach here" style="-fx-border-color: blue;" />
       <ImageView layoutX="907.0" layoutY="223.0">
          <image>
             <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="1110.0" layoutY="269.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
-      <JFXButton layoutX="937.0" layoutY="269.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
-      <JFXButton layoutX="1024.0" layoutY="269.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
-      <TableView layoutX="61.0" layoutY="344.0" prefHeight="200.0" prefWidth="1121.0">
+      <JFXButton layoutX="1110.0" layoutY="269.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
+      <JFXButton layoutX="937.0" layoutY="269.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
+      <JFXButton layoutX="1024.0" layoutY="269.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
+      <TableView fx:id="tblUser" layoutX="61.0" layoutY="344.0" prefHeight="200.0" prefWidth="1121.0">
         <columns>
-          <TableColumn prefWidth="113.00003051757812" text="User_id" />
-          <TableColumn prefWidth="142.0" text="User_name" />
-            <TableColumn prefWidth="134.0" text="Password" />
-            <TableColumn prefWidth="171.0" text="Ranks" />
-            <TableColumn prefWidth="224.0" text="Email" />
-            <TableColumn prefWidth="178.0" text="NIC" />
-            <TableColumn prefWidth="158.0" text="Contact_no" />
+          <TableColumn fx:id="colUser_id" prefWidth="113.00003051757812" text="User_id" />
+          <TableColumn fx:id="colUser_name" prefWidth="142.0" text="User_name" />
+            <TableColumn fx:id="colPassword" prefWidth="134.0" text="Password" />
+            <TableColumn fx:id="colRanks" prefWidth="171.0" text="Ranks" />
+            <TableColumn fx:id="colEmail" prefWidth="224.0" text="Email" />
+            <TableColumn fx:id="colNic" prefWidth="178.0" text="NIC" />
+            <TableColumn fx:id="colContact_no" prefWidth="158.0" text="Contact_no" />
         </columns>
       </TableView>
+      <JFXButton layoutX="1103.0" layoutY="553.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

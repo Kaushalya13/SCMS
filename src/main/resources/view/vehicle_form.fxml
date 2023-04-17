@@ -31,25 +31,26 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField layoutX="101.0" layoutY="138.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="512.0" layoutY="138.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <ComboBox layoutX="922.0" layoutY="138.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="882.0" layoutY="224.0" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtId" layoutX="101.0" layoutY="138.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtName" layoutX="512.0" layoutY="138.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <ComboBox fx:id="cmbType" layoutX="922.0" layoutY="138.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtSearch" layoutX="882.0" layoutY="224.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
       <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="851.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="1057.0" layoutY="277.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delate" />
-      <JFXButton layoutX="882.0" layoutY="277.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
-      <JFXButton layoutX="970.0" layoutY="277.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
-      <TableView layoutX="261.0" layoutY="362.0" prefHeight="200.0" prefWidth="659.0">
+      <JFXButton layoutX="1057.0" layoutY="277.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delate" />
+      <JFXButton layoutX="882.0" layoutY="277.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
+      <JFXButton layoutX="970.0" layoutY="277.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
+      <TableView fx:id="tblVehicle" layoutX="261.0" layoutY="362.0" prefHeight="200.0" prefWidth="659.0">
         <columns>
-          <TableColumn prefWidth="190.0" text="Vehicle_id" />
-          <TableColumn minWidth="0.0" prefWidth="257.0" text="Vehicle_name" />
+          <TableColumn fx:id="colVehicle_id" prefWidth="190.0" text="Vehicle_id" />
+          <TableColumn fx:id="colVehicle_name" minWidth="0.0" prefWidth="257.0" text="Vehicle_name" />
             <TableColumn minWidth="0.0" prefWidth="210.0" text="Type" />
         </columns>
       </TableView>
+      <JFXButton layoutX="1055.0" layoutY="572.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

@@ -28,7 +28,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="246.0" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="      Customer" textFill="#fcfafa">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="284.0" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="      Customer" textFill="#fcfafa">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="306.0" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="        Item" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="341.0" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="          Item" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -52,7 +52,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="369.0" onAction="#btnSupplierOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="      Supplier" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="404.0" onAction="#btnSupplierOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="       Supplier" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -64,7 +64,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="430.0" onAction="#btnVehicleOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="     Vehicle" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutY="464.0" onAction="#btnVehicleOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="     Vehicle" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -76,7 +76,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="29.0" layoutY="595.0" onAction="#btnLogoutOnAction" prefHeight="46.0" prefWidth="157.0" style="-fx-border-color: #1e3799; -fx-background-color: #82ccdd;" text=" Log Out" textFill="#860c0c">
+            <JFXButton alignment="TOP_LEFT" layoutX="29.0" layoutY="604.0" onAction="#btnLogoutOnAction" prefHeight="46.0" prefWidth="157.0" style="-fx-border-color: #1e3799; -fx-background-color: #82ccdd;" text=" Log Out" textFill="#860c0c">
                <font>
                   <Font name="Arial Narrow Bold" size="20.0" />
                </font>
@@ -91,7 +91,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="59.0" onAction="#btnLoginrecodeOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="     LoginRecode" textFill="#fffefe">
+            <JFXButton alignment="TOP_LEFT" layoutY="57.0" onAction="#btnLoginrecodeOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="     LoginRecode" textFill="#fffefe">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -103,7 +103,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="178.0" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="      Employee" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutY="228.0" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="      Employee" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -115,7 +115,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="119.0" onAction="#btnUserOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="         User" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="169.0" onAction="#btnUserOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="         User" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -127,7 +127,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="503.0" onAction="#btnCompanyOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Company" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="533.0" onAction="#btnCompanyOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Company" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -135,6 +135,18 @@
                   <ImageView fitHeight="39.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../Final%20Project/images/icons8-company-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="117.0" onAction="#btnServiceOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="   Service-Details" textFill="#fffefe">
+               <font>
+                  <Font name="Arial Narrow" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../Final%20Project/images/icons8-more-details-100.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -164,7 +176,7 @@
             <Image url="@../../../../../../../Final%20Project/images/icons8-shazam-100%20(1).png" />
          </image>
       </ImageView>
-      <Label layoutX="1176.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="      2023.04.07">
+      <Label fx:id="txtDate" layoutX="1176.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="      2023.04.07">
          <font>
             <Font size="20.0" />
          </font>

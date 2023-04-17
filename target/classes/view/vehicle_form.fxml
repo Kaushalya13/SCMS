@@ -50,6 +50,7 @@
             <TableColumn minWidth="0.0" prefWidth="210.0" text="Type" />
         </columns>
       </TableView>
+      <JFXButton layoutX="1055.0" layoutY="572.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

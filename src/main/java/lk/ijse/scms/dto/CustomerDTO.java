@@ -1,25 +1,23 @@
 package lk.ijse.scms.dto;
 
-public class customerDTO {
+public class CustomerDTO {
        private String custId;
        private String custName;
        private String nic;
        private String address;
        private String email;
        private String contactno;
-       private String userId;
 
-       public customerDTO() {
+       public CustomerDTO() {
        }
 
-       public customerDTO(String custId, String custName, String nic, String address, String email, String contactno, String userId) {
+       public CustomerDTO(String custId, String custName, String nic, String address, String email, String contactno) {
               this.custId = custId;
               this.custName = custName;
               this.nic = nic;
               this.address = address;
               this.email = email;
               this.contactno = contactno;
-              this.userId = userId;
        }
 
        public String getCustId() {
@@ -66,16 +64,8 @@ public class customerDTO {
               return contactno;
        }
 
-       public void setContactno(String contactno) {
+       public void setContactno() {
               this.contactno = contactno;
-       }
-
-       public String getUserId() {
-              return userId;
-       }
-
-       public void setUserId(String userId) {
-              this.userId = userId;
        }
 
        @Override
@@ -87,7 +77,6 @@ public class customerDTO {
                       ", address='" + address + '\'' +
                       ", email='" + email + '\'' +
                       ", contactno='" + contactno + '\'' +
-                      ", userId='" + userId + '\'' +
                       '}';
        }
 }

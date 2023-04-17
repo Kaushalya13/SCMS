@@ -57,7 +57,7 @@
       <JFXButton layoutX="936.0" layoutY="282.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
       <JFXButton layoutX="1112.0" layoutY="282.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
       <JFXButton layoutX="1024.0" layoutY="282.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
-      <TableView layoutX="60.0" layoutY="358.0" prefHeight="242.0" prefWidth="1136.0">
+      <TableView layoutX="60.0" layoutY="358.0" prefHeight="242.0" prefWidth="1129.0">
         <columns>
           <TableColumn prefWidth="115.0" text="Employee_id" />
           <TableColumn prefWidth="174.0" text="Employee_name" />
@@ -68,6 +68,7 @@
         </columns>
       </TableView>
       <ComboBox layoutX="34.0" layoutY="223.0" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXButton layoutX="1113.0" layoutY="608.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

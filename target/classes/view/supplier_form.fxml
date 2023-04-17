@@ -38,29 +38,30 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField layoutX="109.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="521.0" layoutY="234.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="109.0" layoutY="234.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="936.0" layoutY="148.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="521.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="896.0" layoutY="234.0" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtId" layoutX="109.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtContactNo" layoutX="521.0" layoutY="234.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtEmail" layoutX="109.0" layoutY="234.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtAddress" layoutX="936.0" layoutY="148.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtName" layoutX="521.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtSearch" layoutX="896.0" layoutY="234.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
       <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="866.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="1071.0" layoutY="288.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
-      <JFXButton layoutX="898.0" layoutY="288.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
-      <JFXButton layoutX="984.0" layoutY="288.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
-      <TableView layoutX="124.0" layoutY="366.0" prefHeight="200.0" prefWidth="1005.0">
+      <JFXButton layoutX="1071.0" layoutY="288.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
+      <JFXButton layoutX="898.0" layoutY="288.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
+      <JFXButton layoutX="984.0" layoutY="288.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
+      <TableView fx:id="tblSupplier" layoutX="124.0" layoutY="366.0" prefHeight="200.0" prefWidth="1005.0">
         <columns>
-          <TableColumn prefWidth="156.0" text="Supplier_id" />
-          <TableColumn prefWidth="184.0" text="Supplier_name" />
-            <TableColumn prefWidth="215.0" text="Address" />
-            <TableColumn prefWidth="272.0" text="Email" />
-            <TableColumn prefWidth="176.0" text="Contact_no" />
+          <TableColumn fx:id="colSupplier_id" prefWidth="156.0" text="Supplier_id" />
+          <TableColumn fx:id="colSupplier_name" prefWidth="184.0" text="Supplier_name" />
+            <TableColumn fx:id="colAddress" prefWidth="215.0" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="272.0" text="Email" />
+            <TableColumn fx:id="colContact_no" prefWidth="176.0" text="Contact_no" />
         </columns>
       </TableView>
+      <JFXButton layoutX="1070.0" layoutY="587.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />
