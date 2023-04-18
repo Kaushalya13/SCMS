@@ -43,14 +43,14 @@
       <JFXButton layoutX="870.0" layoutY="255.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
       <JFXButton layoutX="957.0" layoutY="255.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
       <JFXButton layoutX="1044.0" layoutY="255.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
-      <TableView fx:id="tblCompany" layoutX="304.0" layoutY="329.0" prefHeight="200.0" prefWidth="600.0">
+      <TableView fx:id="tblCompany" layoutX="213.0" layoutY="328.0" prefHeight="200.0" prefWidth="835.0">
         <columns>
-          <TableColumn fx:id="colCompany_id" prefWidth="172.0" text="Company_id" />
-          <TableColumn fx:id="colCompany_name" prefWidth="218.0" text="Company_name" />
-            <TableColumn fx:id="colType" prefWidth="208.0" text="Type" />
+          <TableColumn fx:id="colCompany_id" prefWidth="266.0" text="Company_id" />
+          <TableColumn fx:id="colCompany_name" prefWidth="290.0" text="Company_name" />
+            <TableColumn fx:id="colType" prefWidth="278.0" text="Type" />
         </columns>
       </TableView>
-      <JFXButton layoutX="1044.0" layoutY="563.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
+      <JFXButton layoutX="1044.0" layoutY="563.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

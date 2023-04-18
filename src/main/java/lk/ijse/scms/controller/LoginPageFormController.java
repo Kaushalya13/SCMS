@@ -8,19 +8,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.scene.control.TextField;
 
 import java.awt.*;
 import java.io.IOException;
 
 public class LoginPageFormController {
+    public Label lblerror;
+    public AnchorPane LogInFormcontext;
     @FXML
     private JFXButton btnlogin;
 
     @FXML
-    private TextField Username;
+    private PasswordField txtPassword;
 
     @FXML
-    private PasswordField Password;
+    private TextField txtUserName;
+
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
@@ -31,5 +35,28 @@ public class LoginPageFormController {
         stage.setTitle("LoginPage");
         stage.centerOnScreen();
 
+        LoginFormManager();
+    }
+
+    private void LoginFormManager() throws IOException {
+        String user = "SCMS";
+        String password = "1234";
+        if ( txtUserName.getText().equals(user) &&  txtPassword.getText().equals(password)) {
+            Stage window = (Stage)  LogInFormcontext.getScene().getWindow();
+            window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_form.fxml"))));
+        } else if ( txtUserName.getText().isEmpty() &&  txtPassword.getText().isEmpty()) {
+            lblerror.setText("Your User Name Or Password IS Empty...!");
+            txtPassword.clear();
+            txtPassword.clear();
+        }
+        else if (! txtUserName.getText().equals(user)) {
+            lblerror.setText("Your User Name is incorrect..!");
+            txtUserName.clear();
+            txtPassword.clear();
+        } else if (! txtPassword.getText().equals(password)) {
+            lblerror.setText("Your Password is incorrect..!");
+            txtUserName.clear();
+            txtPassword.clear();
+        }
     }
 }

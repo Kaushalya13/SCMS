@@ -176,7 +176,7 @@
             <Image url="@../../../../../../../Final%20Project/images/icons8-shazam-100%20(1).png" />
          </image>
       </ImageView>
-      <Label fx:id="txtDate" layoutX="1176.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="      2023.04.07">
+      <Label fx:id="lblDate" layoutX="1176.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="      dd/mm/yyyy">
          <font>
             <Font size="20.0" />
          </font>
@@ -194,5 +194,17 @@
             <Image url="@../../../../../../../Final%20Project/images/icons8-doorbell-24.png" />
          </image>
       </ImageView>
+      <Label fx:id="lblTime" layoutX="948.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="     HH:mm:ss">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/icons8-time-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
    </children>
 </AnchorPane>

@@ -46,13 +46,12 @@
             <Image url="@../image/icons8-search-25.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tblService" layoutX="206.0" layoutY="353.0" prefHeight="200.0" prefWidth="792.0">
+      <TableView fx:id="tblService" layoutX="145.0" layoutY="353.0" prefHeight="200.0" prefWidth="961.0">
         <columns>
-          <TableColumn fx:id="colService_job_id" prefWidth="191.0" text="Service_job_id" />
-          <TableColumn prefWidth="213.0" text="Date" />
-            <TableColumn fx:id="colType" prefWidth="199.0" text="Type" />
-            <TableColumn fx:id="colCustomer_id" prefWidth="188.0" text="Customer_id" />
-            <TableColumn fx:id="colDate" prefWidth="213.0" text="Date" />
+          <TableColumn fx:id="colService_job_id" prefWidth="243.0" text="Service_job_id" />
+          <TableColumn fx:id="colDate" prefWidth="243.0" text="Date" />
+            <TableColumn fx:id="colType" prefWidth="270.0" text="Type" />
+            <TableColumn fx:id="colCustomer_id" prefWidth="204.0" text="Customer_id" />
         </columns>
       </TableView>
       <Label layoutX="104.0" layoutY="196.0" prefHeight="28.0" prefWidth="113.0" text="Customer_id" textFill="#280202">
@@ -60,8 +59,8 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <JFXButton layoutX="1050.0" layoutY="573.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
-      <ComboBox fx:id="cmbCust_id" layoutX="104.0" layoutY="226.0" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXButton layoutX="1050.0" layoutY="573.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
+      <ComboBox fx:id="cmbCust_id" layoutX="104.0" layoutY="226.0" onAction="#cmbCustomer_idOnAction" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

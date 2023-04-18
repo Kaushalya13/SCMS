@@ -75,7 +75,7 @@
             <TableColumn fx:id="colContact_no" prefWidth="158.0" text="Contact_no" />
         </columns>
       </TableView>
-      <JFXButton layoutX="1103.0" layoutY="553.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
+      <JFXButton layoutX="1103.0" layoutY="553.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

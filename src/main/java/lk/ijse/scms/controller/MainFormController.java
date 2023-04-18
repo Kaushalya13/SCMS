@@ -1,5 +1,8 @@
 package lk.ijse.scms.controller;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,15 +11,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class MainFormController implements Initializable {
     public AnchorPane loadFormContext;
-    public Label txtDate;
+    public Label lblDate;
+    public Label lblTime;
+
 
     public void btnDashboradOnAction() throws IOException {
         URL resource = getClass().getResource("/view/dashborad_form.fxml");
@@ -123,6 +132,21 @@ public class MainFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        initClock();
+    }
+
+    private void initClock() {
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+            lblTime.setText(LocalDateTime.now().format(formatter));
+
+            SimpleDateFormat formatter2 = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = new Date();
+            lblDate.setText(formatter2.format(date));
+        }), new KeyFrame(Duration.seconds(1)));
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
     }
 
 }

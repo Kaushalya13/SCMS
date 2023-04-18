@@ -210,8 +210,13 @@ public class CustomerFormController implements Initializable {
         }
     }
 
-   /* public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
-        Stage window = (Stage) loadFormContext.getScene().getWindow();
-        window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_form.fxml"))));
-    }*/
+    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+       /* FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/main_form.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+        loadFormContext.getScene().getWindow().hide();*/
+    }
 }

@@ -5,9 +5,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.CompanyDTO;
 import lk.ijse.scms.dto.CustomerDTO;
@@ -17,6 +21,7 @@ import lk.ijse.scms.model.CompanyModel;
 import lk.ijse.scms.model.CustomerModel;
 import lk.ijse.scms.model.VehicleModel;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +32,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
-import static lk.ijse.scms.model.CustomerModel.View;
 
 public class VehicleFormController implements Initializable {
     private final static String URL = "jdbc:mysql://localhost:3306//scms";
@@ -74,6 +78,7 @@ public class VehicleFormController implements Initializable {
     @FXML
     private TableColumn<?, ?> colCompany_id;
 
+    public AnchorPane loadFormContext;
 
     private String customer_id;
     private String company_id;
@@ -83,7 +88,7 @@ public class VehicleFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> list = FXCollections.observableArrayList("Honda","Suzuki","Yamaha","TVS","Bajaj","");
+        ObservableList<String> list = FXCollections.observableArrayList("Honda","Suzuki","Yamaha","TVS","BAJAJ","Other");
         cmbType.setItems(list);
         getAll();
         setCellValueFactory();
@@ -257,5 +262,15 @@ public class VehicleFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+        /*FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/main_form.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+        loadFormContext.getScene().getWindow().hide();*/
     }
 }

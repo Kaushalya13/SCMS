@@ -5,17 +5,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.SupplierDTO;
 import lk.ijse.scms.dto.tm.SupplierTM;
 import lk.ijse.scms.model.SupplierModel;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -69,6 +74,8 @@ public class SupplierFormController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colContact_no;
+
+    public AnchorPane loadFormContext;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -194,4 +201,13 @@ public class SupplierFormController implements Initializable {
         }
     }
 
+    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+       /* FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/main_form.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+        loadFormContext.getScene().getWindow().hide();*/
+    }
 }
