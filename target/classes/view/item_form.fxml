@@ -23,7 +23,7 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <Label layoutX="518.0" layoutY="205.0" prefHeight="29.0" prefWidth="125.0" text="QtyOnHand" textFill="#220505">
+      <Label layoutX="518.0" layoutY="205.0" prefHeight="29.0" prefWidth="125.0" text="QtyOnStock" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
@@ -39,17 +39,17 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField layoutX="84.0" layoutY="140.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="946.0" layoutY="140.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="518.0" layoutY="242.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="84.0" layoutY="242.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <TableView layoutX="123.0" layoutY="377.0" prefHeight="200.0" prefWidth="1004.0">
+      <JFXTextField fx:id="txtItem_code" layoutX="84.0" layoutY="140.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtDescription" layoutX="946.0" layoutY="140.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtQtyOnStock" layoutX="518.0" layoutY="242.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtUnitPrice" layoutX="84.0" layoutY="242.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <TableView fx:id="tblItem" layoutX="123.0" layoutY="377.0" prefHeight="200.0" prefWidth="1004.0">
         <columns>
-          <TableColumn prefWidth="140.99996948242188" text="Item_code" />
-          <TableColumn prefWidth="191.0" text="Item_type" />
-            <TableColumn prefWidth="234.0" text="Description" />
-            <TableColumn prefWidth="209.0" text="UnitPrice" />
-            <TableColumn prefWidth="228.0" text="QtyOnHand" />
+          <TableColumn fx:id="colItem_code" prefWidth="140.99996948242188" text="Item_code" />
+          <TableColumn fx:id="colItem_type" prefWidth="191.0" text="Item_type" />
+            <TableColumn fx:id="colDescription" prefWidth="234.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="209.0" text="UnitPrice" />
+            <TableColumn fx:id="colQtyOnStock" prefWidth="228.0" text="QtyOnStock" />
         </columns>
       </TableView>
       <ImageView fitHeight="29.0" fitWidth="24.0" layoutX="876.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
@@ -57,11 +57,11 @@
             <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />
          </image>
       </ImageView>
-      <JFXTextField layoutX="906.0" layoutY="242.0" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
-      <JFXButton layoutX="1082.0" layoutY="296.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
-      <JFXButton layoutX="996.0" layoutY="296.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
-      <JFXButton layoutX="909.0" layoutY="296.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
-      <ComboBox layoutX="519.0" layoutY="141.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtSerach" layoutX="906.0" layoutY="242.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
+      <JFXButton layoutX="1082.0" layoutY="296.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delete" />
+      <JFXButton layoutX="996.0" layoutY="296.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
+      <JFXButton layoutX="909.0" layoutY="296.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
+      <ComboBox fx:id="cmbItem_type" layoutX="519.0" layoutY="141.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXButton layoutX="1082.0" layoutY="601.0" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>

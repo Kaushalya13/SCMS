@@ -30,10 +30,10 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtId" layoutX="148.0" layoutY="159.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtTime" layoutX="868.0" layoutY="159.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtDate" layoutX="514.0" layoutY="159.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField layoutX="828.0" layoutY="246.0" onAction="#btnSerachOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Serach here" style="-fx-border-color: blue;" />
+      <JFXTextField layoutX="148.0" layoutY="159.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField layoutX="868.0" layoutY="159.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField layoutX="514.0" layoutY="159.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField layoutX="828.0" layoutY="246.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Serach here" style="-fx-border-color: blue;" />
       <ImageView fitHeight="29.0" fitWidth="24.0" layoutX="794.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />

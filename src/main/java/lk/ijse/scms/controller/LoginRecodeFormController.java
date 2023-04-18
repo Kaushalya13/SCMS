@@ -29,11 +29,7 @@ public class LoginRecodeFormController {
     @FXML
     private TableColumn<?, ?> colTime;
 
-    public void btnSerachOnAction(ActionEvent actionEvent) {
-
-    }
-
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    public void btnSaveOnAction(ActionEvent actionEvent) {
 
     }
 
@@ -41,7 +37,10 @@ public class LoginRecodeFormController {
 
     }
 
-    public void btnSaveOnAction(ActionEvent actionEvent) {
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
 
+    }
+
+    public void btnSearchOnAction(ActionEvent actionEvent) {
     }
 }

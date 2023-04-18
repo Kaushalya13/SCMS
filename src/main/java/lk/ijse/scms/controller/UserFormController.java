@@ -50,7 +50,7 @@ public class UserFormController implements Initializable {
     private JFXTextField txtContact_no;
 
     @FXML
-    private ComboBox<?> cmbRanks;
+    private ComboBox<String> cmbRanks;
 
     @FXML
     private JFXTextField txtSerach;
@@ -81,7 +81,10 @@ public class UserFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        FXCollections.observableArrayList();
+        ObservableList<String> list = FXCollections.observableArrayList("Admi","Cashier");
+
+        cmbRanks.setItems(list);
+
         getAll();
         setCellValueFactory();
     }
@@ -192,7 +195,7 @@ public class UserFormController implements Initializable {
     }
 
     public void btnSerachOnAction(ActionEvent actionEvent) {
-        try {
+       try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement("SELECT * FROM User WHERE user_id = ? ");
 
@@ -211,9 +214,5 @@ public class UserFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public void cmbRanksOnAction(ActionEvent actionEvent) {
-        
     }
 }
