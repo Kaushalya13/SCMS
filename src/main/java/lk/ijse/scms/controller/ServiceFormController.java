@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +26,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -38,12 +40,11 @@ public class ServiceFormController implements Initializable {
         props.setProperty("user","root");
         props.setProperty("password","1234");
     }
-
+    @FXML
+    private DatePicker Dob;
+    
     @FXML
     private JFXTextField txtId;
-
-    @FXML
-    private JFXTextField txtDate;
 
     @FXML
     private ComboBox<String> cmbType;
@@ -125,7 +126,8 @@ public class ServiceFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
-        ServiceDTO serviceDTO = new ServiceDTO(txtId.getText(),txtDate.getText(),(String) cmbType.getValue(),(String) cmbCust_id.getValue());
+        String dob=Dob.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        ServiceDTO serviceDTO = new ServiceDTO(txtId.getText(),dob,(String) cmbType.getValue(),(String) cmbCust_id.getValue());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement("INSERT INTO Service " + "VALUE (?,?,?,?)");
@@ -148,7 +150,8 @@ public class ServiceFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        ServiceDTO serviceDTO = new ServiceDTO(txtId.getText(),txtDate.getText(),(String) cmbType.getValue(),(String) cmbCust_id.getValue());
+        String dob=Dob.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        ServiceDTO serviceDTO = new ServiceDTO(txtId.getText(),dob,(String) cmbType.getValue(),(String) cmbCust_id.getValue());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement("UPDATE Service SET " + "date = ?,type = ?,customer_id = ? WHERE service_job_id = ?");
@@ -191,6 +194,7 @@ public class ServiceFormController implements Initializable {
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
+       /*String dob=Dob.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Service WHERE service_job_id = ? ");
@@ -200,14 +204,14 @@ public class ServiceFormController implements Initializable {
             ResultSet resultSet = pstm.executeQuery();
             while (resultSet.next()){
                 txtId.setText(resultSet.getString(1));
-                txtDate.setText(resultSet.getString(2));
+                dob.setValue(resultSet.getString(2));
                 cmbType.setValue(resultSet.getString(3));
                 cmbCust_id.setValue(resultSet.getString(4));
 
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
+        }*/
     }
 
     public void cmbCustomer_idOnAction(ActionEvent actionEvent) {
@@ -222,13 +226,13 @@ public class ServiceFormController implements Initializable {
         }
     }
 
-    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
-       /* FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/main_form.fxml"));
+    public void btnAddServiceOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/placeItem_form.fxml"));
         AnchorPane anchorPane = loader.load();
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
-        loadFormContext.getScene().getWindow().hide();*/
+        loadFormContext.getScene().getWindow().hide();
     }
 }

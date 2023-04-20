@@ -52,7 +52,6 @@
             <TableColumn fx:id="colCompany_id" minWidth="0.0" prefWidth="177.0" text="Company_id" />
         </columns>
       </TableView>
-      <JFXButton layoutX="1055.0" layoutY="572.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
       <Label layoutX="122.0" layoutY="120.0" prefHeight="21.0" prefWidth="98.0" text="Customer_id" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />

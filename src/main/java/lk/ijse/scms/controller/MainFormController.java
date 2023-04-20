@@ -88,7 +88,6 @@ public class MainFormController implements Initializable {
         stage.setScene(scene);
         stage.show();
         loadFormContext.getScene().getWindow().hide();
-
         
     }
 

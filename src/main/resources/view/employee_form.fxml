@@ -68,7 +68,6 @@
         </columns>
       </TableView>
       <ComboBox fx:id="cmbRanks" layoutX="34.0" layoutY="223.0" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXButton layoutX="1113.0" layoutY="608.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

@@ -2,6 +2,7 @@ package lk.ijse.scms.model;
 
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.UserDTO;
+import lk.ijse.scms.util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -29,5 +30,37 @@ public class UserModel {
             ));
         }
         return data;
+    }
+
+    public static UserDTO searchUserId(String userId) throws SQLException, ClassNotFoundException {
+        ResultSet rst= CrudUtil.execute("select * from user where user_id = ?",userId);
+        if (rst.next()){
+            return new UserDTO(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(5),
+                    rst.getString(6),
+                    rst.getString(7)
+            );
+        }
+        return null;
+    }
+
+    public static UserDTO searchUserName(String userName) throws SQLException, ClassNotFoundException {
+        ResultSet rst= CrudUtil.execute("select * from user where user_name = ?",userName);
+        if (rst.next()){
+            return new UserDTO(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(5),
+                    rst.getString(6),
+                    rst.getString(7)
+            );
+        }
+        return null;
     }
 }

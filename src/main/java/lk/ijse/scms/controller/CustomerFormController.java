@@ -5,22 +5,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.CustomerDTO;
 import lk.ijse.scms.dto.tm.CustomerTM;
 import lk.ijse.scms.model.CustomerModel;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -210,13 +206,4 @@ public class CustomerFormController implements Initializable {
         }
     }
 
-    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
-       /* FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/main_form.fxml"));
-        AnchorPane anchorPane = loader.load();
-        Scene scene = new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-        loadFormContext.getScene().getWindow().hide();*/
-    }
 }

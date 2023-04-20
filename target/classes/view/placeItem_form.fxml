@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="655.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.scms.controller.PlaceItemForm">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="547.0" layoutY="27.0" prefHeight="37.0" prefWidth="243.0" text="Place Item Form" textAlignment="CENTER" textFill="#650c0c">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="191.0" prefHeight="28.0" prefWidth="88.0" text="Vehicle_id :" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbVehicle_id" layoutX="188.0" layoutY="190.0" onAction="#cmbVehicle_idOnAction" prefHeight="31.0" prefWidth="195.0" />
+      <Label layoutX="57.0" layoutY="239.0" prefHeight="28.0" prefWidth="124.0" text="Service_job_id :" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbService_job_id" layoutX="188.0" layoutY="237.0" onAction="#cmbIService_job_idOnAction" prefHeight="31.0" prefWidth="195.0" />
+      <Label layoutX="480.0" layoutY="195.0" prefHeight="28.0" prefWidth="117.0" text="Description :" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDescription" layoutX="598.0" layoutY="192.0" prefHeight="31.0" prefWidth="202.0" />
+      <Label layoutX="870.0" layoutY="194.0" prefHeight="28.0" prefWidth="107.0" text="Service Price :" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtServicePrice" layoutX="986.0" layoutY="190.0" />
+      <Label layoutX="875.0" layoutY="87.0" prefHeight="28.0" prefWidth="124.0" text="Service date :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblServiceDate" layoutX="982.0" layoutY="91.0" prefHeight="28.0" prefWidth="164.0" />
+      <TextField fx:id="txtReceiveDate" layoutX="598.0" layoutY="239.0" prefHeight="31.0" prefWidth="202.0" />
+      <TextField fx:id="txtReturnDate" layoutX="986.0" layoutY="237.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="870.0" layoutY="240.0" prefHeight="28.0" prefWidth="107.0" text="Return date :" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="485.0" layoutY="240.0" prefHeight="28.0" prefWidth="107.0" text="Receive date :" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="151.0" prefHeight="28.0" prefWidth="107.0" text="Customer_id :" textFill="#280202">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbCustomer_id" layoutX="188.0" layoutY="150.0" onAction="#cmbCustomer_idOnAction" prefHeight="31.0" prefWidth="195.0" />
+      <TableView layoutX="83.0" layoutY="352.0" prefHeight="200.0" prefWidth="1076.0">
+        <columns>
+          <TableColumn prefWidth="139.0" text="Customer_id" />
+          <TableColumn prefWidth="141.0" text="Vehicle_id" />
+            <TableColumn prefWidth="195.0" text="Description" />
+            <TableColumn prefWidth="152.0" text="Service Price" />
+            <TableColumn prefWidth="146.0" text="Receive Date" />
+            <TableColumn prefWidth="158.0" text="Return Date" />
+            <TableColumn prefWidth="144.0" text="Action" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="1071.0" layoutY="586.0" prefHeight="31.0" prefWidth="88.0" text="Button" />
+   </children>
+   <effect>
+      <DropShadow color="#ebc2c2" />
+   </effect>
+</AnchorPane>

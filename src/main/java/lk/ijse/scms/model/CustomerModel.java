@@ -1,6 +1,6 @@
 package lk.ijse.scms.model;
 
-import lk.ijse.scms.crudUtil.CrudUtil;
+import lk.ijse.scms.util.CrudUtil;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.CustomerDTO;
 

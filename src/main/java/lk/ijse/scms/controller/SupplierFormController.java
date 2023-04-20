@@ -200,14 +200,4 @@ public class SupplierFormController implements Initializable {
             throwables.printStackTrace();
         }
     }
-
-    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
-       /* FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/main_form.fxml"));
-        AnchorPane anchorPane = loader.load();
-        Scene scene = new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-        loadFormContext.getScene().getWindow().hide();*/
-    }
 }

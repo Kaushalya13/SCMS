@@ -1,22 +1,21 @@
-package lk.ijse.scms.dto;
+package lk.ijse.scms.dto.tm;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
-public class LoginrecodeDTO {
+public class LoginTM {
     private String login_id;
-    private LocalDate date;
-    private LocalTime time;
+    private String date;
+    private String time;
     private String user_id;
+    private String user_name;
 
-    public LoginrecodeDTO() {
+    public LoginTM() {
     }
 
-    public LoginrecodeDTO(String login_id, LocalDate date, LocalTime time, String user_id) {
+    public LoginTM(String login_id, String date, String time, String user_id, String user_name) {
         this.login_id = login_id;
         this.date = date;
         this.time = time;
         this.user_id = user_id;
+        this.user_name = user_name;
     }
 
     public String getLogin_id() {
@@ -27,19 +26,19 @@ public class LoginrecodeDTO {
         this.login_id = login_id;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public LocalTime getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
@@ -51,13 +50,22 @@ public class LoginrecodeDTO {
         this.user_id = user_id;
     }
 
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
     @Override
     public String toString() {
-        return "LoginrecodeDTO{" +
+        return "LoginTM{" +
                 "login_id='" + login_id + '\'' +
-                ", date=" + date +
-                ", time=" + time +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
                 ", user_id='" + user_id + '\'' +
+                ", user_name='" + user_name + '\'' +
                 '}';
     }
 }

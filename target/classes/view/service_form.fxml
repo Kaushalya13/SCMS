@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -35,7 +36,6 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtDate" layoutX="520.0" layoutY="124.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <ComboBox fx:id="cmbType" layoutX="917.0" layoutY="124.0" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXButton layoutX="877.0" layoutY="269.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
       <JFXButton layoutX="966.0" layoutY="269.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
@@ -59,8 +59,9 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <JFXButton layoutX="1050.0" layoutY="573.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
       <ComboBox fx:id="cmbCust_id" layoutX="104.0" layoutY="226.0" onAction="#cmbCustomer_idOnAction" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXButton layoutX="1015.0" layoutY="585.0" onAction="#btnAddServiceOnAction" prefHeight="33.0" prefWidth="113.0" style="-fx-border-color: #8e44ad; -fx-background-color: #45aaf2;" text="Add_Service" />
+      <DatePicker fx:id="Dob" layoutX="517.0" layoutY="125.0" prefHeight="31.0" prefWidth="211.0" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

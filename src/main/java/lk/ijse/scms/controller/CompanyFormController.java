@@ -5,21 +5,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.CompanyDTO;
 import lk.ijse.scms.dto.tm.CompanyTM;
 import lk.ijse.scms.model.CompanyModel;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -68,11 +63,15 @@ public class CompanyFormController implements Initializable {
         ObservableList<String> list = FXCollections.observableArrayList("Manager","Repairer","Cashier");
         cmbType.setItems(list);
 
+        clearAll();
         getAll();
-
         setCellValueFactory();
     }
-
+    void clearAll() {
+        txtId.setText(null);
+        txtName.setText(null);
+        cmbType.setValue(null);
+    }
     void setCellValueFactory() {
         colCompany_id.setCellValueFactory(new PropertyValueFactory<>("company_id"));
         colCompany_name.setCellValueFactory(new PropertyValueFactory<>("company_name"));
@@ -118,6 +117,7 @@ public class CompanyFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -178,16 +178,5 @@ public class CompanyFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-
-   public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
-        /*FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/dashborad_form.fxml"));
-        AnchorPane anchorPane = loader.load();
-        Scene scene = new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-        loadFormContext.getScene().getWindow().hide();*/
     }
 }

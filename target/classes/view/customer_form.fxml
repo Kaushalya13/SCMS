@@ -73,7 +73,6 @@
          </image>
       </ImageView>
       <JFXTextField fx:id="txtSearch" layoutX="934.0" layoutY="216.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" styleClass="textfield" stylesheets="@../style/Style.css" />
-      <JFXButton layoutX="1108.0" layoutY="587.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #7f8fa6;" text="Back" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

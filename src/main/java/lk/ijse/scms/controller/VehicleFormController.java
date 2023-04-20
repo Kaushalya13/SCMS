@@ -124,10 +124,10 @@ public class VehicleFormController implements Initializable {
     }
 
     void setCellValueFactory() {
+        colCustomer_id.setCellValueFactory(new PropertyValueFactory<>("customer_id"));
         colVehicle_id.setCellValueFactory(new PropertyValueFactory<>("vehicle_id"));
         colVehicle_name.setCellValueFactory(new PropertyValueFactory<>("vehicle_name"));
         colType.setCellValueFactory(new PropertyValueFactory<>("vehicle_type"));
-        colCustomer_id.setCellValueFactory(new PropertyValueFactory<>("customer_id"));
         colCompany_id.setCellValueFactory(new PropertyValueFactory<>("company_id"));
     }
 
@@ -262,15 +262,5 @@ public class VehicleFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
-        /*FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/main_form.fxml"));
-        AnchorPane anchorPane = loader.load();
-        Scene scene = new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-        loadFormContext.getScene().getWindow().hide();*/
     }
 }

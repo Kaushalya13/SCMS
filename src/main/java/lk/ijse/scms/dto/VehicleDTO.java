@@ -8,6 +8,7 @@ public class VehicleDTO {
     private String company_id;
 
     public VehicleDTO() {
+
     }
 
     public VehicleDTO(String vehicle_id, String vehicle_name, String vehicle_type, String customer_id, String company_id) {

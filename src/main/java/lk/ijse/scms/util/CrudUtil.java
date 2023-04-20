@@ -1,4 +1,4 @@
-package lk.ijse.scms.crudUtil;
+package lk.ijse.scms.util;
 import lk.ijse.scms.db.DBConnection;
 
 import java.sql.PreparedStatement;
