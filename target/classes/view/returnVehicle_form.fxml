@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="655.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.scms.controller.ReturnVehicleFormController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="529.0" layoutY="23.0" prefHeight="37.0" prefWidth="243.0" text="Return Vehicle Form" textAlignment="CENTER" textFill="#650c0c">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="880.0" layoutY="83.0" prefHeight="28.0" prefWidth="80.0" text="Date       :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="509.0" layoutY="214.0" prefHeight="28.0" prefWidth="121.0" text="Receive_date   :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="97.0" layoutY="147.0" prefHeight="28.0" prefWidth="121.0" text="Vehicle_id       :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblService" layoutX="93.0" layoutY="353.0" prefHeight="200.0" prefWidth="1051.0">
+        <columns>
+          <TableColumn fx:id="colService_job_id" prefWidth="140.0" text="Vehicle_id" />
+          <TableColumn fx:id="colDate" prefWidth="171.0" text="Customer_id" />
+            <TableColumn fx:id="colType" prefWidth="193.0" text="Receive_date" />
+            <TableColumn fx:id="colCustomer_id" prefWidth="187.0" text="Return_date" />
+            <TableColumn fx:id="colCustomer_id1" prefWidth="190.0" text="Service_price" />
+            <TableColumn fx:id="colCustomer_id11" prefWidth="169.0" text="Action" />
+        </columns>
+      </TableView>
+      <Label layoutX="97.0" layoutY="213.0" prefHeight="28.0" prefWidth="121.0" text="Customer_id   :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="987.0" layoutY="80.0" prefHeight="34.0" prefWidth="164.0" />
+      <Label layoutX="880.0" layoutY="140.0" prefHeight="28.0" prefWidth="80.0" text="Time      :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="987.0" layoutY="137.0" prefHeight="34.0" prefWidth="164.0" />
+      <JFXComboBox fx:id="cmbVehicle_id" layoutX="234.0" layoutY="145.0" onAction="#cmbVehicle_idOnAction" prefHeight="31.0" prefWidth="164.0" />
+      <JFXButton layoutX="412.0" layoutY="145.0" onAction="#btnNewVehicleOnAction" style="-fx-background-color: #32ff7e;" text="+New">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow color="#c6b8b8" />
+         </effect>
+      </JFXButton>
+      <JFXButton layoutX="412.0" layoutY="212.0" onAction="#btnNewCustomerOnAction" style="-fx-background-color: #32ff7e;" text="+New">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow color="#c6b8b8" />
+         </effect>
+      </JFXButton>
+      <TextField fx:id="txtReceive_date" layoutX="651.0" layoutY="212.0" prefHeight="31.0" prefWidth="164.0" />
+      <Label layoutX="860.0" layoutY="214.0" prefHeight="28.0" prefWidth="121.0" text="Return_date   :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtReturn_date" layoutX="987.0" layoutY="212.0" prefHeight="31.0" prefWidth="157.0" />
+      <JFXComboBox fx:id="cmbCustomer_id1" layoutX="234.0" layoutY="212.0" onAction="#cmbCustomer_idOnAction" prefHeight="31.0" prefWidth="164.0" />
+      <Label layoutX="97.0" layoutY="281.0" prefHeight="28.0" prefWidth="121.0" text="Service_price :" textFill="#280202">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtService_price" layoutX="234.0" layoutY="280.0" prefHeight="31.0" prefWidth="164.0" />
+      <JFXButton layoutX="1009.0" layoutY="280.0" onAction="#btnAddToCartOnAction" prefHeight="38.0" prefWidth="133.0" style="-fx-background-color: #17c0eb;" text="Add to cart">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Final%20Project/images/icons8-shopping-cart-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="97.0" layoutY="592.0" prefHeight="31.0" prefWidth="82.0" text="Net Total  :">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNewTotal" layoutX="199.0" layoutY="594.0" prefHeight="31.0" prefWidth="140.0" textFill="#ee3e3e" />
+      <JFXButton layoutX="1001.0" layoutY="579.0" prefHeight="31.0" prefWidth="140.0" style="-fx-background-color: #44bd32;" text="Button" />
+   </children>
+   <effect>
+      <DropShadow color="#ebc2c2" />
+   </effect>
+</AnchorPane>

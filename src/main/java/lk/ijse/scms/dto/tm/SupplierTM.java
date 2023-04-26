@@ -1,11 +1,11 @@
 package lk.ijse.scms.dto.tm;
 
 public class SupplierTM {
-    String supplier_id;
-    String supplier_name;
-    String address;
-    String email;
-    String contactno;
+    private String supplier_id;
+    private String supplier_name;
+    private String address;
+    private String email;
+    private String contactno;
 
     public SupplierTM() {
     }

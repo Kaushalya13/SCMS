@@ -1,12 +1,12 @@
 package lk.ijse.scms.dto.tm;
 
 public class CustomerTM {
-    String custId;
-    String custName;
-    String nic;
-    String address;
-    String email;
-    String contactno;
+    private String custId;
+    private String custName;
+    private String nic;
+    private String address;
+    private String email;
+    private String contactno;
 
     public CustomerTM() {
     }

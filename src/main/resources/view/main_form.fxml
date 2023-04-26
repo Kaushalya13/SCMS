@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -64,29 +63,14 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="464.0" onAction="#btnVehicleOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="     Vehicle" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutY="464.0" onAction="#btnCompanyOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="     Company" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../Final%20Project/images/icons8-vehicle-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="29.0" layoutY="604.0" onAction="#btnLogoutOnAction" prefHeight="46.0" prefWidth="157.0" style="-fx-border-color: #1e3799; -fx-background-color: #82ccdd;" text=" Log Out" textFill="#860c0c">
-               <font>
-                  <Font name="Arial Narrow Bold" size="20.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../../../../../../../Final%20Project/images/icons8-chevron-left-24.png" />
+                        <Image url="@../../../../../../../Final%20Project/images/icons8-company-64.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -115,38 +99,50 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="169.0" onAction="#btnUserOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="         User" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="169.0" onAction="#btnVehicleOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="        Vehicle" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="46.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../Final%20Project/images/icons8-user-64.png" />
+                        <Image url="@../../../../../../../Final%20Project/images/icons8-vehicle-64.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="533.0" onAction="#btnCompanyOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Company" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="530.0" onAction="#btnServiceOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="  Service Details" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="39.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../Final%20Project/images/icons8-company-64.png" />
+                        <Image url="@../../../../../../../Final%20Project/images/icons8-more-details-100.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="117.0" onAction="#btnServiceOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="   Service-Details" textFill="#fffefe">
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="116.0" onAction="#btnUserOnAction" prefHeight="60.0" prefWidth="241.0" ripplerFill="BLACK" text="          User" textFill="#fffefe">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="46.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../Final%20Project/images/icons8-more-details-100.png" />
+                        <Image url="@../../../../../../../Final%20Project/images/icons8-user-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="593.0" onAction="#btnPlaceOrderOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Place Order" textFill="WHITE">
+               <font>
+                  <Font name="Arial Narrow" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../Final%20Project/images/icons8-shopping-cart-50.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -176,7 +172,7 @@
             <Image url="@../../../../../../../Final%20Project/images/icons8-shazam-100%20(1).png" />
          </image>
       </ImageView>
-      <Label fx:id="lblDate" layoutX="1176.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="      dd/mm/yyyy">
+      <Label fx:id="lblDate" layoutX="1148.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="      dd/mm/yyyy">
          <font>
             <Font size="20.0" />
          </font>
@@ -189,12 +185,7 @@
          </graphic>
       </Label>
       <JFXTextField layoutX="344.0" layoutY="36.0" prefHeight="31.0" prefWidth="280.0" promptText="Search here" style="-fx-border-color: blue;" />
-      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="1401.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../Final%20Project/images/icons8-doorbell-24.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="lblTime" layoutX="948.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="     HH:mm:ss">
+      <Label fx:id="lblTime" layoutX="885.0" layoutY="32.0" prefHeight="38.0" prefWidth="205.0" text="     HH:mm:ss">
          <font>
             <Font size="20.0" />
          </font>
@@ -206,5 +197,10 @@
             </ImageView>
          </graphic>
       </Label>
+      <ImageView fitHeight="52.0" fitWidth="60.0" layoutX="1407.0" layoutY="25.0" onMouseClicked="#imgLogoutOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Final%20Project/images/icons8-logout-rounded-64.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

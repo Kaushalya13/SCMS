@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -19,37 +20,38 @@
             <Font name="Britannic Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="518.0" layoutY="120.0" prefHeight="21.0" prefWidth="98.0" text="Vehicle_id" textFill="#220505">
+      <Label layoutX="400.0" layoutY="120.0" prefHeight="21.0" prefWidth="98.0" text="Vehicle_id" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <Label layoutX="122.0" layoutY="214.0" prefHeight="21.0" prefWidth="86.0" text="Type" textFill="#220505">
+      <Label layoutX="920.0" layoutY="120.0" prefHeight="21.0" prefWidth="86.0" text="Type" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <Label layoutX="920.0" layoutY="120.0" prefHeight="21.0" prefWidth="119.0" text="Vehicle_name" textFill="#220505">
+      <Label layoutX="664.0" layoutY="120.0" prefHeight="21.0" prefWidth="119.0" text="Vehicle_name" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtId" layoutX="518.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtName" layoutX="920.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <ComboBox fx:id="cmbType" layoutX="122.0" layoutY="237.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtSearch" layoutX="882.0" layoutY="224.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
-      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="851.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+      <JFXTextField fx:id="txtId" layoutX="400.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <ComboBox fx:id="cmbType" layoutX="920.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtSearch" layoutX="883.0" layoutY="253.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
+      <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="849.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="1057.0" layoutY="277.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delate" />
-      <JFXButton layoutX="882.0" layoutY="277.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
-      <JFXButton layoutX="970.0" layoutY="277.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
-      <TableView fx:id="tblVehicle" layoutX="122.0" layoutY="365.0" prefHeight="200.0" prefWidth="979.0">
+      <JFXButton layoutX="1057.0" layoutY="311.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #c0392b;" text="Delate" />
+      <JFXButton layoutX="882.0" layoutY="311.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #2ecc71;" text="Save" />
+      <JFXButton layoutX="970.0" layoutY="311.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="76.0" style="-fx-border-color: #8e44ad; -fx-background-color: #f39c12;" text="Update" />
+      <TableView fx:id="tblVehicle" layoutX="122.0" layoutY="365.0" prefHeight="200.0" prefWidth="1010.0">
         <columns>
-          <TableColumn fx:id="colCustomer_id" prefWidth="190.0" text="Customer_id" />
-          <TableColumn fx:id="colVehicle_id" minWidth="0.0" prefWidth="205.0" text="Vehicle_id" />
-            <TableColumn fx:id="colVehicle_name" minWidth="0.0" prefWidth="222.0" text="Vehicle_name" />
-            <TableColumn fx:id="colType" minWidth="0.0" prefWidth="184.0" text="Type" />
-            <TableColumn fx:id="colCompany_id" minWidth="0.0" prefWidth="177.0" text="Company_id" />
+          <TableColumn fx:id="colCustomer_id" prefWidth="133.0" text="Customer_id" />
+          <TableColumn fx:id="colVehicle_id" minWidth="0.0" prefWidth="142.0" text="Vehicle_id" />
+            <TableColumn fx:id="colVehicle_name" minWidth="0.0" prefWidth="161.0" text="Vehicle_name" />
+            <TableColumn fx:id="colType" minWidth="0.0" prefWidth="146.0" text="Type" />
+            <TableColumn fx:id="colReceive_date" minWidth="0.0" prefWidth="133.0" text="Receive_date" />
+            <TableColumn fx:id="colReturn_date" minWidth="0.0" prefWidth="149.0" text="Return_date" />
+            <TableColumn fx:id="colCompany_id" minWidth="0.0" prefWidth="145.0" text="Company_id" />
         </columns>
       </TableView>
       <Label layoutX="122.0" layoutY="120.0" prefHeight="21.0" prefWidth="98.0" text="Customer_id" textFill="#220505">
@@ -57,13 +59,26 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="518.0" layoutY="214.0" prefHeight="21.0" prefWidth="119.0" text="Company_id" textFill="#220505">
+      <Label layoutX="630.0" layoutY="218.0" prefHeight="21.0" prefWidth="119.0" text="Company_id" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbCompany_id" layoutX="518.0" layoutY="241.0" onAction="#cmbCompany_idOnAction" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <ComboBox fx:id="cmbCompany_id" layoutX="630.0" layoutY="253.0" onAction="#cmbCompany_idOnAction" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <ComboBox fx:id="cmbCustomer_id" layoutX="122.0" layoutY="147.0" onAction="#cmbCustomer_idOnAction" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <ComboBox fx:id="cmbVehicle_name" layoutX="663.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <Label layoutX="122.0" layoutY="218.0" prefHeight="21.0" prefWidth="98.0" text="Receive_date" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="Date" layoutX="119.0" layoutY="253.0" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <DatePicker fx:id="ReturnDate" layoutX="372.0" layoutY="253.0" prefHeight="31.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <Label layoutX="372.0" layoutY="218.0" prefHeight="21.0" prefWidth="98.0" text="Return_date" textFill="#220505">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

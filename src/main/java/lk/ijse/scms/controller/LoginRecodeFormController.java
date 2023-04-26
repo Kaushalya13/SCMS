@@ -12,6 +12,7 @@ import lk.ijse.scms.dto.LoginrecodeDTO;
 import lk.ijse.scms.dto.UserDTO;
 import lk.ijse.scms.dto.tm.LoginTM;
 import lk.ijse.scms.model.LoginrecodeModel;
+import lk.ijse.scms.model.OrderModel;
 import lk.ijse.scms.model.UserModel;
 
 import java.net.URL;
@@ -51,29 +52,17 @@ public class LoginRecodeFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<LoginTM> loginTMS = FXCollections.observableArrayList();
-        colLogin_id.setCellValueFactory(new PropertyValueFactory<>("login_id"));
-        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
-        colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
-        colUser_id.setCellValueFactory(new PropertyValueFactory<>("user_id"));
-        colUser_name.setCellValueFactory(new PropertyValueFactory<>("user_"));
+        generateNextLoginId();
+    }
 
-       try {
-            for (LoginrecodeDTO loginrecodeDTO : LoginrecodeModel.getAll()){
-                UserDTO userDTO = UserModel.searchUserId(loginrecodeDTO.getUser_id());
-                LocalDate date = loginrecodeDTO.getDate();
-                LocalTime time = loginrecodeDTO.getTime();
-                loginTMS.add(new LoginTM(
-                        loginrecodeDTO.getLogin_id(),
-                        date.toString(),
-                        time.toString(),
-                        userDTO.getUser_id(),
-                        userDTO.getUser_name()
-                ));
-            }
-           tblLoginrecode.setItems(loginTMS);
-        } catch (SQLException | ClassNotFoundException e) {
-           new Alert(Alert.AlertType.CONFIRMATION, e.getMessage()).show();
+    private void generateNextLoginId() {
+        try {
+            String nextId = LoginrecodeModel.generateNextLoginId();
+            colLogin_id.setText(nextId);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+
+
 }

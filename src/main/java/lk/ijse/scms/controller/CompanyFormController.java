@@ -14,7 +14,6 @@ import lk.ijse.scms.dto.CompanyDTO;
 import lk.ijse.scms.dto.tm.CompanyTM;
 import lk.ijse.scms.model.CompanyModel;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,8 +34,9 @@ public class CompanyFormController implements Initializable {
     @FXML
     private JFXTextField txtId;
 
+
     @FXML
-    private JFXTextField txtName;
+    private ComboBox<String> cmbCompany_name;
 
     @FXML
     private ComboBox<String> cmbType;
@@ -60,8 +60,11 @@ public class CompanyFormController implements Initializable {
 
     @Override
     public void initialize(java.net.URL location, ResourceBundle resources) {
-        ObservableList<String> list = FXCollections.observableArrayList("Manager","Repairer","Cashier");
-        cmbType.setItems(list);
+        ObservableList<String> list = FXCollections.observableArrayList("Ranathunga Motors","Mihiri Motors","Other Company");
+        cmbCompany_name.setItems(list);
+
+        ObservableList<String> list1 = FXCollections.observableArrayList("First Service","Second Service","Other Service");
+        cmbType.setItems(list1);
 
         clearAll();
         getAll();
@@ -69,7 +72,7 @@ public class CompanyFormController implements Initializable {
     }
     void clearAll() {
         txtId.setText(null);
-        txtName.setText(null);
+        cmbCompany_name.setValue(null);
         cmbType.setValue(null);
     }
     void setCellValueFactory() {
@@ -98,7 +101,7 @@ public class CompanyFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
-        CompanyDTO companyDTO = new CompanyDTO(txtId.getText(), txtName.getText(), (String) cmbType.getValue());
+        CompanyDTO companyDTO = new CompanyDTO(txtId.getText(),(String) cmbCompany_name.getValue(), (String) cmbType.getValue());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement("INSERT INTO Company " + "VALUE (?,?,?)");
@@ -121,7 +124,7 @@ public class CompanyFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        CompanyDTO companyDTO = new CompanyDTO(txtId.getText(), txtName.getText(), (String) cmbType.getValue());
+        CompanyDTO companyDTO = new CompanyDTO(txtId.getText(), (String) cmbCompany_name.getValue(), (String) cmbType.getValue());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement("UPDATE Company SET " + "company_name = ?,company_type = ? WHERE company_id = ?");
@@ -141,6 +144,7 @@ public class CompanyFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -160,6 +164,7 @@ public class CompanyFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
@@ -172,7 +177,7 @@ public class CompanyFormController implements Initializable {
             ResultSet resultSet = pstm.executeQuery();
             while (resultSet.next()){
                 txtId.setText(resultSet.getString(1));
-                txtName.setText(resultSet.getString(2));
+                cmbCompany_name.setValue(resultSet.getString(2));
                 cmbType.setValue(resultSet.getString(3));
             }
         } catch (SQLException throwables) {

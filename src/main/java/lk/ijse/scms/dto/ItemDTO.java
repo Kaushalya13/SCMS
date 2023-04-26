@@ -3,17 +3,15 @@ package lk.ijse.scms.dto;
 public class ItemDTO {
     private String itemCode;
     private String itemType;
-    private String description;
     private Double unitPrice;
     private Integer qtyOnStock;
 
     public ItemDTO() {
     }
 
-    public ItemDTO(String itemCode, String itemType, String description, Double unitPrice, Integer qtyOnStock) {
+    public ItemDTO(String itemCode, String itemType, Double unitPrice, Integer qtyOnStock) {
         this.itemCode = itemCode;
         this.itemType = itemType;
-        this.description = description;
         this.unitPrice = unitPrice;
         this.qtyOnStock = qtyOnStock;
     }
@@ -32,14 +30,6 @@ public class ItemDTO {
 
     public void setItemType(String itemType) {
         this.itemType = itemType;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Double getUnitPrice() {
@@ -63,7 +53,6 @@ public class ItemDTO {
         return "ItemDTO{" +
                 "itemCode='" + itemCode + '\'' +
                 ", itemType='" + itemType + '\'' +
-                ", description='" + description + '\'' +
                 ", unitPrice=" + unitPrice +
                 ", qtyOnStock=" + qtyOnStock +
                 '}';

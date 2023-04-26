@@ -1,13 +1,13 @@
 package lk.ijse.scms.dto.tm;
 
 public class UserTM {
-    String user_id;
-    String user_name;
-    String password;
-    String ranks;
-    String email;
-    String nic;
-    String contactno;
+    private String user_id;
+    private String user_name;
+    private String password;
+    private String ranks;
+    private String email;
+    private String nic;
+    private String contactno;
 
     public UserTM() {
     }

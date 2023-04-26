@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -79,18 +80,6 @@ public class MainFormController implements Initializable {
 
     }
 
-
-    public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/loginPage_form.fxml"));
-        AnchorPane anchorPane = loader.load();
-        Scene scene = new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-        loadFormContext.getScene().getWindow().hide();
-        
-    }
-
     public void btnUserOnAction(ActionEvent actionEvent) throws IOException {
         URL resource = getClass().getResource("/view/user_form.fxml");
         assert resource != null;
@@ -117,7 +106,7 @@ public class MainFormController implements Initializable {
     }
 
     public void btnServiceOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("/view/service_form.fxml");
+        URL resource = getClass().getResource("/view/returnVehicle_form.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         loadFormContext.getChildren().clear();
@@ -148,4 +137,21 @@ public class MainFormController implements Initializable {
         clock.play();
     }
 
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("/view/placeOrder_form.fxml");
+        assert resource != null;
+        Parent load = FXMLLoader.load(resource);
+        loadFormContext.getChildren().clear();
+        loadFormContext.getChildren().add(load);
+    }
+
+    public void imgLogoutOnAction(MouseEvent mouseEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/view/loginPage_form.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+        loadFormContext.getScene().getWindow().hide();
+    }
 }

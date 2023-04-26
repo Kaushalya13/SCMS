@@ -32,7 +32,6 @@
             <Font name="Arial" size="15.0" />
          </font></Label>
       <JFXTextField fx:id="txtId" layoutX="125.0" layoutY="125.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtName" layoutX="514.0" layoutY="125.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <ComboBox fx:id="cmbType" layoutX="908.0" layoutY="125.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXTextField fx:id="txtSearch" layoutX="868.0" layoutY="204.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
       <ImageView fitHeight="29.0" fitWidth="24.0" layoutX="838.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
@@ -50,6 +49,7 @@
             <TableColumn fx:id="colType" prefWidth="278.0" text="Type" />
         </columns>
       </TableView>
+      <ComboBox fx:id="cmbCompany_name" layoutX="514.0" layoutY="125.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
    </children>
    <effect>
       <DropShadow color="#ebc2c2" />

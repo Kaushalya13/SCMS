@@ -81,6 +81,15 @@ public class SupplierFormController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         getAll();
         setCellValueFactory();
+        clearAll();
+    }
+
+    void clearAll() {
+        txtId.setText(null);
+        txtName.setText(null);
+        txtAddress.setText(null);
+        txtEmail.setText(null);
+        txtContactNo.setText(null);
     }
 
     void setCellValueFactory() {
@@ -133,6 +142,7 @@ public class SupplierFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -158,6 +168,7 @@ public class SupplierFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -178,6 +189,7 @@ public class SupplierFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
 

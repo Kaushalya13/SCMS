@@ -33,23 +33,7 @@ public class UserModel {
     }
 
     public static UserDTO searchUserId(String userId) throws SQLException, ClassNotFoundException {
-        ResultSet rst= CrudUtil.execute("select * from user where user_id = ?",userId);
-        if (rst.next()){
-            return new UserDTO(
-                    rst.getString(1),
-                    rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4),
-                    rst.getString(5),
-                    rst.getString(6),
-                    rst.getString(7)
-            );
-        }
-        return null;
-    }
-
-    public static UserDTO searchUserName(String userName) throws SQLException, ClassNotFoundException {
-        ResultSet rst= CrudUtil.execute("select * from user where user_name = ?",userName);
+        ResultSet rst= CrudUtil.execute("select * from User where user_id = ?",userId);
         if (rst.next()){
             return new UserDTO(
                     rst.getString(1),

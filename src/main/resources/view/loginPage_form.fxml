@@ -24,12 +24,12 @@
             </ImageView>
             <PasswordField fx:id="txtPassword" layoutX="604.0" layoutY="266.0" prefHeight="46.0" prefWidth="339.0" promptText="Password" style="-fx-border-color: #74b9ff;">
                <font>
-                  <Font size="20.0" />
+                  <Font size="17.0" />
                </font>
             </PasswordField>
             <TextField fx:id="txtUserName" layoutX="603.0" layoutY="179.0" prefHeight="46.0" prefWidth="339.0" promptText="Username" style="-fx-border-color: #74b9ff;">
                <font>
-                  <Font size="20.0" />
+                  <Font size="17.0" />
                </font>
             </TextField>
             <Label layoutX="549.0" layoutY="68.0" prefHeight="56.0" prefWidth="354.0" text="WELCOME BACK  !">
@@ -56,7 +56,7 @@
                   <Font name="Arial Black" size="15.0" />
                </font>
             </JFXButton>
-            <Label fx:id="lblerror" layoutX="594.0" layoutY="470.0" prefHeight="30.0" prefWidth="329.0" textFill="#f80808">
+            <Label fx:id="lblerror" layoutX="564.0" layoutY="470.0" prefHeight="30.0" prefWidth="365.0" textAlignment="CENTER" textFill="#f80808">
                <font>
                   <Font size="20.0" />
                </font>

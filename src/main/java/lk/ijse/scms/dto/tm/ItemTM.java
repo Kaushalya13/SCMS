@@ -1,19 +1,17 @@
 package lk.ijse.scms.dto.tm;
 
 public class ItemTM {
-    String itemCode;
-    String itemType;
-    String description;
-    Double unitPrice;
-    Integer qtyOnStock;
+    private String itemCode;
+    private String itemType;
+    private Double unitPrice;
+    private Integer qtyOnStock;
 
     public ItemTM() {
     }
 
-    public ItemTM(String itemCode, String itemType, String description, Double unitPrice, Integer qtyOnStock) {
+    public ItemTM(String itemCode, String itemType, Double unitPrice, Integer qtyOnStock) {
         this.itemCode = itemCode;
         this.itemType = itemType;
-        this.description = description;
         this.unitPrice = unitPrice;
         this.qtyOnStock = qtyOnStock;
     }
@@ -32,14 +30,6 @@ public class ItemTM {
 
     public void setItemType(String itemType) {
         this.itemType = itemType;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Double getUnitPrice() {
@@ -63,7 +53,6 @@ public class ItemTM {
         return "ItemTM{" +
                 "itemCode='" + itemCode + '\'' +
                 ", itemType='" + itemType + '\'' +
-                ", description='" + description + '\'' +
                 ", unitPrice=" + unitPrice +
                 ", qtyOnStock=" + qtyOnStock +
                 '}';

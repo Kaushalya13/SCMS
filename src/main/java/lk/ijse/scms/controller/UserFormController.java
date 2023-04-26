@@ -94,6 +94,17 @@ public class UserFormController implements Initializable {
 
         getAll();
         setCellValueFactory();
+        clearAll();
+    }
+
+    void clearAll() {
+        txtId.setText(null);
+        txtName.setText(null);
+        txtPassword.setText(null);
+        cmbRanks.setValue(null);
+        txtEmail.setText(null);
+        txtNic.setText(null);
+        txtContact_no.setText(null);
     }
 
     void setCellValueFactory() {
@@ -153,6 +164,7 @@ public class UserFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -180,6 +192,7 @@ public class UserFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -199,6 +212,7 @@ public class UserFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnSerachOnAction(ActionEvent actionEvent) {

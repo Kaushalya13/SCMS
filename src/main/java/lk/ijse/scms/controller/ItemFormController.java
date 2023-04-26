@@ -40,9 +40,6 @@ public class ItemFormController implements Initializable {
     private JFXTextField txtItem_code;
 
     @FXML
-    private JFXTextField txtDescription;
-
-    @FXML
     private JFXTextField txtQtyOnStock;
 
     @FXML
@@ -76,17 +73,22 @@ public class ItemFormController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> list = FXCollections.observableArrayList("Manager","Repairer","Cashier","Mechanic supporters");
+        ObservableList<String> list = FXCollections.observableArrayList("Oil","Spare parts");
         cmbItem_type.setItems(list);
 
         getAll();
         setCellValueFactory();
+        clearAll();
     }
-
+    void clearAll() {
+        txtItem_code.setText(null);
+        cmbItem_type.setValue(null);
+        txtUnitPrice.setText(null);
+        txtQtyOnStock.setText(null);
+    }
     void setCellValueFactory() {
         colItem_code.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
         colItem_type.setCellValueFactory(new PropertyValueFactory<>("itemType"));
-        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         colQtyOnStock.setCellValueFactory(new PropertyValueFactory<>("qtyOnStock"));
     }
@@ -100,7 +102,6 @@ public class ItemFormController implements Initializable {
                 obList.add(new ItemTM(
                         itemDTO.getItemCode(),
                         itemDTO.getItemType(),
-                        itemDTO.getDescription(),
                         itemDTO.getUnitPrice(),
                         itemDTO.getQtyOnStock()
                 ));
@@ -113,15 +114,14 @@ public class ItemFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
-        ItemDTO itemDTO = new ItemDTO(txtItem_code.getText(),(String) cmbItem_type.getValue(), txtDescription.getText(),Double.parseDouble(txtUnitPrice.getText()),Integer.parseInt(txtQtyOnStock.getText()));
+        ItemDTO itemDTO = new ItemDTO(txtItem_code.getText(),(String) cmbItem_type.getValue(),Double.parseDouble(txtUnitPrice.getText()),Integer.parseInt(txtQtyOnStock.getText()));
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("INSERT INTO Item " + "VALUE (?,?,?,?,?)");
+            PreparedStatement pstm = connection.prepareStatement("INSERT INTO Item " + "VALUE (?,?,?,?)");
             pstm.setString(1,itemDTO.getItemCode());
             pstm.setString(2,itemDTO.getItemType());
-            pstm.setString(3,itemDTO.getDescription());
-            pstm.setDouble(4,itemDTO.getUnitPrice());
-            pstm.setInt(5,itemDTO.getQtyOnStock());
+            pstm.setDouble(3,itemDTO.getUnitPrice());
+            pstm.setInt(4,itemDTO.getQtyOnStock());
 
 
             int add = pstm.executeUpdate();
@@ -135,19 +135,19 @@ public class ItemFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-       ItemDTO itemDTO = new ItemDTO(txtItem_code.getText(),(String) cmbItem_type.getValue(), txtDescription.getText(),Double.parseDouble(txtUnitPrice.getText()),Integer.parseInt(txtQtyOnStock.getText()));
+       ItemDTO itemDTO = new ItemDTO(txtItem_code.getText(),(String) cmbItem_type.getValue(),Double.parseDouble(txtUnitPrice.getText()),Integer.parseInt(txtQtyOnStock.getText()));
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("UPDATE Item SET " + "itemType = ?,description = ?,unitPrice = ?,qtyOnStock = ? WHERE itemCode = ?");
+            PreparedStatement pstm = connection.prepareStatement("UPDATE Item SET " + "itemType = ?,unitPrice = ?,qtyOnStock = ? WHERE itemCode = ?");
 
             pstm.setString(1,itemDTO.getItemType());
-            pstm.setString(2,itemDTO.getDescription());
-            pstm.setDouble(3,itemDTO.getUnitPrice());
-            pstm.setInt(4,itemDTO.getQtyOnStock());
-            pstm.setString(5,itemDTO.getItemCode());
+            pstm.setDouble(2,itemDTO.getUnitPrice());
+            pstm.setInt(3,itemDTO.getQtyOnStock());
+            pstm.setString(4,itemDTO.getItemCode());
 
             int add = pstm.executeUpdate();
 
@@ -160,6 +160,7 @@ public class ItemFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -179,6 +180,7 @@ public class ItemFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
@@ -192,9 +194,8 @@ public class ItemFormController implements Initializable {
             while (resultSet.next()){
                 txtItem_code.setText(resultSet.getString(1));
                 cmbItem_type.setValue(resultSet.getString(2));
-                txtDescription.setText(resultSet.getString(3));
-                txtUnitPrice.setText(resultSet.getString(4));
-                txtQtyOnStock.setText(resultSet.getString(5));
+                txtUnitPrice.setText(resultSet.getString(3));
+                txtQtyOnStock.setText(resultSet.getString(4));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

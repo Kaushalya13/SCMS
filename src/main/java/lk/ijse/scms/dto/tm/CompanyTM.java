@@ -1,9 +1,9 @@
 package lk.ijse.scms.dto.tm;
 
 public class CompanyTM {
-    String company_id;
-    String company_name;
-    String company_type;
+    private String company_id;
+    private String company_name;
+    private String company_type;
 
     public CompanyTM() {
     }

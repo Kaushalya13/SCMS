@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -12,8 +13,10 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginPageFormController {
+public class LoginPageFormController implements Initializable {
 
     public AnchorPane LogInFormcontext;
     public Label lblerror;
@@ -37,6 +40,7 @@ public class LoginPageFormController {
         stage.centerOnScreen();*/
 
         LoginFormManager();
+
     }
 
     private void LoginFormManager() throws IOException {
@@ -47,7 +51,7 @@ public class LoginPageFormController {
             window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_form.fxml"))));
             window.centerOnScreen();
         } else if ( txtUserName.getText().isEmpty() &&  txtPassword.getText().isEmpty()) {
-            lblerror.setText("Your User Name Or Password IS Empty...!");
+            lblerror.setText("Your User Name Or Password is Empty...!");
             txtPassword.clear();
             txtPassword.clear();
         }
@@ -60,5 +64,10 @@ public class LoginPageFormController {
             txtUserName.clear();
             txtPassword.clear();
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        txtUserName.requestFocus();
     }
 }

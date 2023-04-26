@@ -83,6 +83,15 @@ public class CustomerFormController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         getAll();
         setCellValueFactory();
+        clearAll();
+    }
+
+    void clearAll() {
+        txtId.setText(null);
+        txtName.setText(null);
+        txtNic.setText(null);
+        txtAddress.setText(null);
+        txtContactNo.setText(null);
     }
 
     void setCellValueFactory() {
@@ -139,6 +148,7 @@ public class CustomerFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -164,6 +174,7 @@ public class CustomerFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -183,6 +194,7 @@ public class CustomerFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {

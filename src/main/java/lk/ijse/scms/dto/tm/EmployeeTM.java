@@ -1,12 +1,12 @@
 package lk.ijse.scms.dto.tm;
 
 public class EmployeeTM {
-    String employee_id;
-    String employee_name;
-    String nic;
-    String address;
-    String ranks;
-    String contactno;
+    private String employee_id;
+    private String employee_name;
+    private String nic;
+    private String address;
+    private String ranks;
+    private String contactno;
 
     public EmployeeTM() {
     }

@@ -87,8 +87,17 @@ public class EmployeeFormController implements Initializable {
 
         getAll();
         setCellValueFactory();
+        clearAll();
     }
 
+    void clearAll() {
+        txtId.setText(null);
+        txtName.setText(null);
+        txtNic.setText(null);
+        txtAddress.setText(null);
+        cmbRanks.setValue(null);
+        txtContact_no.setText(null);
+    }
     void setCellValueFactory() {
         colEmployee_id.setCellValueFactory(new PropertyValueFactory<>("employee_id"));
         colEmployee_name.setCellValueFactory(new PropertyValueFactory<>("employee_name"));
@@ -143,6 +152,7 @@ public class EmployeeFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -169,6 +179,7 @@ public class EmployeeFormController implements Initializable {
             e.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -188,6 +199,7 @@ public class EmployeeFormController implements Initializable {
             throwables.printStackTrace();
         }
         getAll();
+        clearAll();
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
