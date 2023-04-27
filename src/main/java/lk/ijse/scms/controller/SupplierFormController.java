@@ -13,12 +13,15 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.SupplierDTO;
 import lk.ijse.scms.dto.tm.SupplierTM;
 import lk.ijse.scms.model.SupplierModel;
+import lk.ijse.scms.util.Regex;
+import lk.ijse.scms.util.TextFields;
 
 import java.io.IOException;
 import java.net.URL;
@@ -121,6 +124,10 @@ public class SupplierFormController implements Initializable {
         }
     }
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         SupplierDTO supplierDTO = new SupplierDTO(txtId.getText(), txtName.getText(), txtAddress.getText(), txtEmail.getText(), txtContactNo.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -146,6 +153,10 @@ public class SupplierFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         SupplierDTO supplierDTO = new SupplierDTO(txtId.getText(), txtName.getText(), txtAddress.getText(), txtEmail.getText(), txtContactNo.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -211,5 +222,30 @@ public class SupplierFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public void txtSupplierIDOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.INVOICE,txtId);
+    }
+
+    public void txtSupplierNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.NAME,txtName);
+    }
+
+    public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.ADDRESS,txtAddress);
+    }
+
+    public void txtEmailOnKeyReleased(KeyEvent keyEvent) { Regex.setTextColor(TextFields.EMAIL,txtEmail); }
+
+    public void txtContactNoOnKeyReleased(KeyEvent keyEvent) { Regex.setTextColor(TextFields.PHONE,txtContactNo); }
+
+    public boolean isValidated(){
+        if(!Regex.setTextColor(TextFields.INVOICE,txtId))return false;
+        if(!Regex.setTextColor(TextFields.NAME,txtName))return false;
+        if(!Regex.setTextColor(TextFields.ADDRESS,txtAddress))return false;
+        if(!Regex.setTextColor(TextFields.EMAIL,txtEmail))return false;
+        if(!Regex.setTextColor(TextFields.PHONE,txtContactNo))return false;
+        return true;
     }
 }

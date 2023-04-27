@@ -48,12 +48,12 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtPassword" layoutX="677.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtId" layoutX="63.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtNic" layoutX="372.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtName" layoutX="372.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtEmail" layoutX="63.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtContact_no" layoutX="677.0" layoutY="219.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtPassword" layoutX="677.0" layoutY="109.0" onKeyReleased="#txtPasswordOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtId" layoutX="63.0" layoutY="109.0" onKeyReleased="#txtUserIDOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtNic" layoutX="372.0" layoutY="219.0" onKeyReleased="#txtNicOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtName" layoutX="372.0" layoutY="109.0" onKeyReleased="#txtUserNameOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtEmail" layoutX="63.0" layoutY="219.0" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtContact_no" layoutX="677.0" layoutY="219.0" onKeyReleased="#txtContactNoOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <ComboBox fx:id="cmbRanks" layoutX="975.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXTextField fx:id="txtSerach" layoutX="935.0" layoutY="219.0" onAction="#btnSerachOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Serach here" style="-fx-border-color: blue;" />
       <ImageView layoutX="907.0" layoutY="223.0">

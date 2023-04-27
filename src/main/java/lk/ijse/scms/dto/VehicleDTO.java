@@ -8,11 +8,12 @@ public class VehicleDTO {
     private String company_id;
     private String receive_date;
     private String return_date;
+    private String status;
 
     public VehicleDTO() {
     }
 
-    public VehicleDTO(String vehicle_id, String vehicle_name, String vehicle_type, String customer_id, String company_id, String receive_date, String return_date) {
+    public VehicleDTO(String vehicle_id, String vehicle_name, String vehicle_type, String customer_id, String company_id, String receive_date, String return_date, String status) {
         this.vehicle_id = vehicle_id;
         this.vehicle_name = vehicle_name;
         this.vehicle_type = vehicle_type;
@@ -20,6 +21,7 @@ public class VehicleDTO {
         this.company_id = company_id;
         this.receive_date = receive_date;
         this.return_date = return_date;
+        this.status = status;
     }
 
     public String getVehicle_id() {
@@ -78,6 +80,14 @@ public class VehicleDTO {
         this.return_date = return_date;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "VehicleDTO{" +
@@ -88,6 +98,7 @@ public class VehicleDTO {
                 ", company_id='" + company_id + '\'' +
                 ", receive_date='" + receive_date + '\'' +
                 ", return_date='" + return_date + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

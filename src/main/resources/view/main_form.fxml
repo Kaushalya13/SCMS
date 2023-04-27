@@ -27,7 +27,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="284.0" onAction="#btnCustomerOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="      Customer" textFill="#fcfafa">
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="300.0" onAction="#btnCustomerOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Customer" textFill="#fcfafa">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -39,7 +39,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="341.0" onAction="#btnItemOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="          Item" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="355.0" onAction="#btnItemOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="          Item" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -51,7 +51,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="404.0" onAction="#btnSupplierOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="       Supplier" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="415.0" onAction="#btnSupplierOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="       Supplier" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -63,7 +63,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="464.0" onAction="#btnCompanyOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="     Company" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutY="475.0" onAction="#btnCompanyOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="     Company" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -75,7 +75,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="57.0" onAction="#btnLoginrecodeOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="     LoginRecode" textFill="#fffefe">
+            <JFXButton alignment="TOP_LEFT" layoutY="61.0" onAction="#btnLoginrecodeOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="     LoginRecode" textFill="#fffefe">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -87,7 +87,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="228.0" onAction="#btnEmployeeOnAction" prefHeight="46.0" prefWidth="240.0" ripplerFill="BLACK" text="      Employee" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutY="241.0" onAction="#btnEmployeeOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Employee" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -99,7 +99,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="169.0" onAction="#btnVehicleOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="        Vehicle" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="182.0" onAction="#btnVehicleOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="        Vehicle" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -111,19 +111,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="530.0" onAction="#btnServiceOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="  Service Details" textFill="WHITE">
-               <font>
-                  <Font name="Arial Narrow" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../Final%20Project/images/icons8-more-details-100.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="116.0" onAction="#btnUserOnAction" prefHeight="60.0" prefWidth="241.0" ripplerFill="BLACK" text="          User" textFill="#fffefe">
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="122.0" onAction="#btnUserOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="          User" textFill="#fffefe">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -135,7 +123,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="593.0" onAction="#btnPlaceOrderOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Place Order" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="544.0" onAction="#btnPlaceOrderOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      Place Order" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>

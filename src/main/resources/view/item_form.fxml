@@ -35,9 +35,9 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtItem_code" layoutX="84.0" layoutY="140.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtQtyOnStock" layoutX="84.0" layoutY="242.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtUnitPrice" layoutX="906.0" layoutY="140.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtItem_code" layoutX="84.0" layoutY="140.0" onKeyReleased="#txtItemCodeOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtQtyOnStock" layoutX="84.0" layoutY="242.0" onKeyReleased="#txtQtyOnStockOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtUnitPrice" layoutX="906.0" layoutY="140.0" onKeyReleased="#txtUnitPriceOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <TableView fx:id="tblItem" layoutX="163.0" layoutY="379.0" prefHeight="200.0" prefWidth="810.0">
         <columns>
           <TableColumn fx:id="colItem_code" prefWidth="180.0" text="Item_code" />

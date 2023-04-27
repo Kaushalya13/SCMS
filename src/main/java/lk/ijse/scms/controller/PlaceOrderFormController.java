@@ -56,16 +56,16 @@ public class PlaceOrderFormController implements Initializable {
     private JFXComboBox<String> cmbCustomer_id;
 
     @FXML
-    private TableColumn<?, ?> colItemCode;
+    private TableColumn<PlaceOrderTM, String> colItemCode;
 
     @FXML
-    private TableColumn<?, ?> colItemType;
+    private TableColumn<PlaceOrderTM, String> colItemType;
 
     @FXML
-    private TableColumn<?, ?> colUnitPrice;
+    private TableColumn<PlaceOrderTM, String> colUnitPrice;
 
     @FXML
-    private TableColumn<?, ?> colOrder_id;
+    private TableColumn<PlaceOrderTM, String> colOrder_id;
 
     @FXML
     private TableColumn<PlaceOrderTM,Integer> colQty;
@@ -74,7 +74,7 @@ public class PlaceOrderFormController implements Initializable {
     private TableColumn<PlaceOrderTM, Double> colTotal;
 
     @FXML
-    private TableColumn<?, ?> colAction;
+    private TableColumn<PlaceOrderTM, String> colAction;
 
     @FXML
     private TextField txtQtyOnStock;

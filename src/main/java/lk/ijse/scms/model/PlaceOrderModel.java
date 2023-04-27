@@ -2,14 +2,10 @@ package lk.ijse.scms.model;
 
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.CartDTO;
-import lk.ijse.scms.dto.PlaceOrderDTO;
-import lk.ijse.scms.dto.VehicleDTO;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PlaceOrderModel {

@@ -23,12 +23,12 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtId" layoutX="34.0" layoutY="126.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtId" layoutX="34.0" layoutY="126.0" onKeyReleased="#txtEmployeeIDOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <Label layoutX="355.0" layoutY="95.0" prefHeight="30.0" prefWidth="152.0" text="Employee_name" textFill="#280202">
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtName" layoutX="355.0" layoutY="126.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtName" layoutX="355.0" layoutY="126.0" onKeyReleased="#txtEmployeeNameOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <Label layoutX="34.0" layoutY="192.0" prefHeight="30.0" prefWidth="152.0" text="Ranks" textFill="#280202">
          <font>
             <Font name="Arial" size="15.0" />
@@ -45,9 +45,9 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtAddress" layoutX="974.0" layoutY="126.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtNic" layoutX="679.0" layoutY="126.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtContact_no" layoutX="354.0" layoutY="222.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtAddress" layoutX="974.0" layoutY="126.0" onKeyReleased="#txtAddressOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtNic" layoutX="679.0" layoutY="126.0" onKeyReleased="#txtNicOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtContact_no" layoutX="354.0" layoutY="222.0" onKeyReleased="#txtContactNoOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="909.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Final%20Project/images/icons8-search-25.png" />

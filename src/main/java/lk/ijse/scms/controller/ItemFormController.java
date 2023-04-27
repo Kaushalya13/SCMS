@@ -10,12 +10,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.ItemDTO;
 import lk.ijse.scms.dto.tm.ItemTM;
 import lk.ijse.scms.model.ItemModel;
+import lk.ijse.scms.util.Regex;
+import lk.ijse.scms.util.TextFields;
 
 import java.io.IOException;
 import java.net.URL;
@@ -114,6 +117,10 @@ public class ItemFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         ItemDTO itemDTO = new ItemDTO(txtItem_code.getText(),(String) cmbItem_type.getValue(),Double.parseDouble(txtUnitPrice.getText()),Integer.parseInt(txtQtyOnStock.getText()));
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -139,6 +146,10 @@ public class ItemFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
        ItemDTO itemDTO = new ItemDTO(txtItem_code.getText(),(String) cmbItem_type.getValue(),Double.parseDouble(txtUnitPrice.getText()),Integer.parseInt(txtQtyOnStock.getText()));
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -200,5 +211,24 @@ public class ItemFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public void txtItemCodeOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.INVOICE,txtItem_code);
+    }
+
+    public void txtUnitPriceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.DOUBLE,txtUnitPrice);
+    }
+
+    public void txtQtyOnStockOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.INTEGER,txtQtyOnStock);
+    }
+
+    public boolean isValidated(){
+        if(!Regex.setTextColor(TextFields.INVOICE,txtItem_code))return false;
+        if(!Regex.setTextColor(TextFields.DOUBLE,txtUnitPrice))return false;
+        if(!Regex.setTextColor(TextFields.INTEGER,txtQtyOnStock))return false;
+        return true;
     }
 }

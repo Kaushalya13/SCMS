@@ -10,12 +10,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.UserDTO;
 import lk.ijse.scms.dto.tm.UserTM;
 import lk.ijse.scms.model.UserModel;
+import lk.ijse.scms.util.Regex;
+import lk.ijse.scms.util.TextFields;
 
 import java.io.IOException;
 import java.net.URL;
@@ -141,6 +144,10 @@ public class UserFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         UserDTO userDTO = new UserDTO(txtId.getText(), txtName.getText(), txtPassword.getText(), (String) cmbRanks.getValue(), txtEmail.getText(), txtNic.getText(), txtContact_no.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -168,6 +175,10 @@ public class UserFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         UserDTO userDTO = new UserDTO(txtId.getText(), txtName.getText(), txtPassword.getText(), (String) cmbRanks.getValue(), txtEmail.getText(), txtNic.getText(), txtContact_no.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -235,5 +246,37 @@ public class UserFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public void txtUserIDOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.INVOICE,txtId);
+    }
+
+    public void txtUserNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.NAME,txtName);
+    }
+    
+    public void txtNicOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.LANKAN_ID,txtNic);
+    }
+
+    public void txtPasswordOnKeyReleased(KeyEvent keyEvent) { Regex.setTextColor(TextFields.PASSWORD,txtPassword); }
+
+    public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.EMAIL,txtEmail);
+    }
+
+    public void txtContactNoOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.PHONE,txtContact_no);
+    }
+
+    public boolean isValidated(){
+        if(!Regex.setTextColor(TextFields.INVOICE,txtId))return false;
+        if(!Regex.setTextColor(TextFields.NAME,txtName))return false;
+        if(!Regex.setTextColor(TextFields.LANKAN_ID,txtNic))return false;
+        if(!Regex.setTextColor(TextFields.PASSWORD,txtPassword))return false;
+        if(!Regex.setTextColor(TextFields.EMAIL,txtEmail))return false;
+        if(!Regex.setTextColor(TextFields.PHONE,txtContact_no))return false;
+        return true;
     }
 }

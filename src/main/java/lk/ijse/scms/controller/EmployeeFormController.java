@@ -5,19 +5,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.EmployeeDTO;
 import lk.ijse.scms.dto.tm.EmployeeTM;
 import lk.ijse.scms.model.EmployeeModel;
+import lk.ijse.scms.util.Regex;
+import lk.ijse.scms.util.TextFields;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -130,6 +129,10 @@ public class EmployeeFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         EmployeeDTO employeeDTO = new EmployeeDTO(txtId.getText(),txtName.getText(),txtNic.getText(),txtAddress.getText(),(String) cmbRanks.getValue(), txtContact_no.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -156,6 +159,10 @@ public class EmployeeFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         EmployeeDTO employeeDTO = new EmployeeDTO(txtId.getText(),txtName.getText(),txtNic.getText(),txtAddress.getText(),(String) cmbRanks.getValue(), txtContact_no.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -222,4 +229,38 @@ public class EmployeeFormController implements Initializable {
             throwables.printStackTrace();
         }
     }
+
+    public void txtEmployeeIDOnKeyReleased(KeyEvent keyEvent) {
+
+        Regex.setTextColor(TextFields.INVOICE,txtId);
+    }
+
+    public void txtEmployeeNameOnKeyReleased(KeyEvent keyEvent) {
+
+        Regex.setTextColor(TextFields.NAME,txtName);
+    }
+
+    public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.ADDRESS,txtAddress);
+    }
+
+    public void txtNicOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.LANKAN_ID,txtNic);
+    }
+
+    public void txtContactNoOnKeyReleased(KeyEvent keyEvent) {
+
+        Regex.setTextColor(TextFields.PHONE,txtContact_no);
+    }
+
+    public boolean isValidated(){
+        if(!Regex.setTextColor(TextFields.INVOICE,txtId))return false;
+        if(!Regex.setTextColor(TextFields.NAME,txtName))return false;
+        if(!Regex.setTextColor(TextFields.ADDRESS,txtAddress))return false;
+        if(!Regex.setTextColor(TextFields.LANKAN_ID,txtNic))return false;
+        if(!Regex.setTextColor(TextFields.PHONE,txtContact_no))return false;
+        return true;
+    }
+
+
 }

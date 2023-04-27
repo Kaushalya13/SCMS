@@ -23,15 +23,15 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtId" layoutX="18.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtId" layoutX="18.0" layoutY="114.0" onKeyReleased="#txtCustomerIDOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <Label layoutX="346.0" layoutY="79.0" prefHeight="28.0" prefWidth="123.0" text="Customer_name" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtName" layoutX="345.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtNic" layoutX="655.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtAddress" layoutX="973.0" layoutY="114.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtName" layoutX="345.0" layoutY="114.0" onKeyReleased="#txtCustomerNameOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtNic" layoutX="655.0" layoutY="114.0" onKeyReleased="#txtNicOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtAddress" layoutX="973.0" layoutY="114.0" onKeyReleased="#txtAddressOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <Label layoutX="657.0" layoutY="79.0" prefHeight="28.0" prefWidth="123.0" text="Nic" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />
@@ -47,8 +47,8 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtEmail" layoutX="18.0" layoutY="204.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtContactNo" layoutX="344.0" layoutY="204.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtEmail" layoutX="18.0" layoutY="204.0" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtContactNo" layoutX="344.0" layoutY="204.0" onKeyReleased="#txtContactNoOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <Label layoutX="346.0" layoutY="176.0" prefHeight="28.0" prefWidth="123.0" text="Contact_no" textFill="#220505">
          <font>
             <Font name="Arial" size="15.0" />

@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.CompanyDTO;
@@ -17,12 +18,11 @@ import lk.ijse.scms.dto.tm.VehicleTM;
 import lk.ijse.scms.model.CompanyModel;
 import lk.ijse.scms.model.CustomerModel;
 import lk.ijse.scms.model.VehicleModel;
+import lk.ijse.scms.util.Regex;
+import lk.ijse.scms.util.TextFields;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -87,6 +87,9 @@ public class VehicleFormController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colCompany_id;
+
+    @FXML
+    private TableColumn<?, ?> colStatus;
 
     public AnchorPane loadFormContext;
 
@@ -157,6 +160,7 @@ public class VehicleFormController implements Initializable {
         colReceive_date.setCellValueFactory(new PropertyValueFactory<>("receive_date"));
         colReturn_date.setCellValueFactory(new PropertyValueFactory<>("return_date"));
         colCompany_id.setCellValueFactory(new PropertyValueFactory<>("company_id"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
     }
 
     void getAll() {
@@ -172,7 +176,8 @@ public class VehicleFormController implements Initializable {
                         vehicleDTO.getCustomer_id(),
                         vehicleDTO.getCompany_id(),
                         vehicleDTO.getReceive_date(),
-                        vehicleDTO.getReturn_date()
+                        vehicleDTO.getReturn_date(),
+                        vehicleDTO.getStatus()
                 ));
             }
             tblVehicle.setItems(obList);
@@ -183,12 +188,16 @@ public class VehicleFormController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         String date=Date.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String returndate=ReturnDate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        VehicleDTO vehicleDTO = new VehicleDTO(txtId.getText(), (String) cmbVehicle_name.getValue(),(String) cmbType.getValue(),(String) cmbCustomer_id.getValue(),(String) cmbCompany_id.getValue(),date,returndate);
+        VehicleDTO vehicleDTO = new VehicleDTO(txtId.getText(), (String) cmbVehicle_name.getValue(),(String) cmbType.getValue(),(String) cmbCustomer_id.getValue(),(String) cmbCompany_id.getValue(),date,returndate,"Active");
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("INSERT INTO Vehicle " + " VALUE (?,?,?,?,?,?,?)");
+            PreparedStatement pstm = connection.prepareStatement("INSERT INTO Vehicle " + " VALUE (?,?,?,?,?,?,?,?)");
             pstm.setString(1,vehicleDTO.getVehicle_id());
             pstm.setString(2,vehicleDTO.getVehicle_name());
             pstm.setString(3,vehicleDTO.getVehicle_type());
@@ -196,6 +205,7 @@ public class VehicleFormController implements Initializable {
             pstm.setString(5,vehicleDTO.getCompany_id());
             pstm.setString(6,vehicleDTO.getReceive_date());
             pstm.setString(7,vehicleDTO.getReturn_date());
+            pstm.setString(8,"Active");
 
             int add = pstm.executeUpdate();
 
@@ -212,12 +222,16 @@ public class VehicleFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         String date=Date.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String returndate=ReturnDate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        VehicleDTO vehicleDTO = new VehicleDTO(txtId.getText(), (String) cmbVehicle_name.getValue(),(String) cmbType.getValue(),(String) cmbCustomer_id.getValue(),(String) cmbCompany_id.getValue(),date,returndate);
+        VehicleDTO vehicleDTO = new VehicleDTO(txtId.getText(), (String) cmbVehicle_name.getValue(),(String) cmbType.getValue(),(String) cmbCustomer_id.getValue(),(String) cmbCompany_id.getValue(),date,returndate,"Active");
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("UPDATE Vehicle SET " + "vehicle_name = ?,vehicle_type = ?,customer_id = ?,company_id = ?,receive_date = ?,return_date = ? WHERE vehicle_id = ?");
+            PreparedStatement pstm = connection.prepareStatement("UPDATE Vehicle SET " + "vehicle_name = ?,vehicle_type = ?,customer_id = ?,company_id = ?,receive_date = ?,return_date = ?,status = ? WHERE vehicle_id = ?");
 
             pstm.setString(1,vehicleDTO.getVehicle_name());
             pstm.setString(2,vehicleDTO.getVehicle_type());
@@ -226,6 +240,7 @@ public class VehicleFormController implements Initializable {
             pstm.setString(5,vehicleDTO.getReceive_date());
             pstm.setString(6,vehicleDTO.getReturn_date());
             pstm.setString(7,vehicleDTO.getVehicle_id());
+            pstm.setString(8,"Active");
 
             int add = pstm.executeUpdate();
 
@@ -305,5 +320,23 @@ public class VehicleFormController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public void btnReturnVehicleOnAction(ActionEvent actionEvent) {
+        Integer index = tblVehicle.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+        String id = colVehicle_id.getCellData(index).toString();
+
+    }
+
+    public void txtVehicleIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.INVOICE,txtId);
+    }
+
+    public boolean isValidated(){
+        if(!Regex.setTextColor(TextFields.INVOICE,txtId))return false;
+        return true;
     }
 }

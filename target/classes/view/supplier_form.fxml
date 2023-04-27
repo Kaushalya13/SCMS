@@ -38,11 +38,11 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtId" layoutX="109.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtContactNo" layoutX="521.0" layoutY="234.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtEmail" layoutX="109.0" layoutY="234.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtAddress" layoutX="936.0" layoutY="148.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
-      <JFXTextField fx:id="txtName" layoutX="521.0" layoutY="147.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtId" layoutX="109.0" layoutY="147.0" onKeyReleased="#txtSupplierIDOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtContactNo" layoutX="521.0" layoutY="234.0" onKeyReleased="#txtContactNoOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtEmail" layoutX="109.0" layoutY="234.0" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtAddress" layoutX="936.0" layoutY="148.0" onKeyReleased="#txtAddressOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtName" layoutX="521.0" layoutY="147.0" onKeyReleased="#txtSupplierNameOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXTextField fx:id="txtSearch" layoutX="896.0" layoutY="234.0" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="251.0" promptText="Search here" style="-fx-border-color: blue;" />
       <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="866.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
          <image>

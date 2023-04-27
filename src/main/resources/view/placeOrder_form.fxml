@@ -104,7 +104,7 @@
          </font>
       </Label>
       <Label fx:id="lblOrder_id" layoutX="196.0" layoutY="112.0" prefHeight="28.0" prefWidth="164.0" />
-      <JFXButton alignment="TOP_RIGHT" layoutX="1000.0" layoutY="589.0" onAction="#btnPlaceOrderOnAction" prefHeight="38.0" prefWidth="146.0" style="-fx-background-color: #44bd32;" text="    Place Order" textAlignment="JUSTIFY">
+      <JFXButton alignment="TOP_RIGHT" layoutX="990.0" layoutY="589.0" onAction="#btnPlaceOrderOnAction" prefHeight="38.0" prefWidth="156.0" style="-fx-background-color: #44bd32;" text="    Place Order" textAlignment="JUSTIFY">
          <graphic>
             <ImageView fitHeight="28.0" fitWidth="29.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -144,8 +144,8 @@
             <DropShadow color="#c6b8b8" />
          </effect>
       </JFXButton>
-      <TextField fx:id="txtOrderID_Place" layoutX="853.0" layoutY="592.0" prefHeight="27.0" prefWidth="120.0" />
-      <Button layoutX="751.0" layoutY="594.0" mnemonicParsing="false" onAction="#CreateBillOnAction" text="Create Bill">
+      <TextField fx:id="txtOrderID_Place" layoutX="835.0" layoutY="592.0" prefHeight="27.0" prefWidth="120.0" />
+      <Button layoutX="725.0" layoutY="594.0" mnemonicParsing="false" onAction="#CreateBillOnAction" text="Create Bill">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>

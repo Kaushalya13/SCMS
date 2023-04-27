@@ -11,11 +11,14 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.scms.db.DBConnection;
 import lk.ijse.scms.dto.CustomerDTO;
 import lk.ijse.scms.dto.tm.CustomerTM;
 import lk.ijse.scms.model.CustomerModel;
+import lk.ijse.scms.util.Regex;
+import lk.ijse.scms.util.TextFields;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -126,6 +129,10 @@ public class CustomerFormController implements Initializable {
         }
     }
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         CustomerDTO custDTO = new CustomerDTO(txtId.getText(),txtName.getText(),txtNic.getText(),txtAddress.getText(),txtEmail.getText(),txtContactNo.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -152,6 +159,10 @@ public class CustomerFormController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if(!isValidated()){
+            new Alert(Alert.AlertType.ERROR,"Check Fields").show();
+            return;
+        }
         CustomerDTO custDTO = new CustomerDTO(txtId.getText(),txtName.getText(),txtNic.getText(),txtAddress.getText(),txtEmail.getText(),txtContactNo.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -218,4 +229,36 @@ public class CustomerFormController implements Initializable {
         }
     }
 
+    public void txtCustomerIDOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.INVOICE,txtId);
+    }
+
+    public void txtCustomerNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.NAME,txtName);
+    }
+
+    public void txtNicOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.LANKAN_ID,txtNic);
+    }
+
+    public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.ADDRESS,txtAddress);
+    }
+
+    public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.EMAIL,txtEmail);
+    }
+
+    public void txtContactNoOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextFields.PHONE,txtContactNo);
+    }
+
+    public boolean isValidated(){
+        if(!Regex.setTextColor(TextFields.INVOICE,txtId))return false;
+        if(!Regex.setTextColor(TextFields.NAME,txtName))return false;
+        if(!Regex.setTextColor(TextFields.ADDRESS,txtAddress))return false;
+        if(!Regex.setTextColor(TextFields.LANKAN_ID,txtNic))return false;
+        if(!Regex.setTextColor(TextFields.PHONE,txtContactNo))return false;
+        return true;
+    }
 }

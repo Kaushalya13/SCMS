@@ -105,14 +105,6 @@ public class MainFormController implements Initializable {
         loadFormContext.getChildren().add(load);
     }
 
-    public void btnServiceOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("/view/returnVehicle_form.fxml");
-        assert resource != null;
-        Parent load = FXMLLoader.load(resource);
-        loadFormContext.getChildren().clear();
-        loadFormContext.getChildren().add(load);
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
