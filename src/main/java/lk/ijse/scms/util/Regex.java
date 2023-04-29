@@ -41,9 +41,6 @@ public class Regex {
             case INVOICE:
                 field="^[A-z][\\d]{3,3}$";
                 break;
-            case PASSWORD:
-                field="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$";
-                break;
 
         }
 

@@ -231,7 +231,7 @@ public class VehicleFormController implements Initializable {
         VehicleDTO vehicleDTO = new VehicleDTO(txtId.getText(), (String) cmbVehicle_name.getValue(),(String) cmbType.getValue(),(String) cmbCustomer_id.getValue(),(String) cmbCompany_id.getValue(),date,returndate,"Active");
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("UPDATE Vehicle SET " + "vehicle_name = ?,vehicle_type = ?,customer_id = ?,company_id = ?,receive_date = ?,return_date = ?,status = ? WHERE vehicle_id = ?");
+            PreparedStatement pstm = connection.prepareStatement("UPDATE Vehicle SET " + " vehicle_name = ?,vehicle_type = ?,customer_id = ?,company_id = ?,receive_date = ?,return_date = ?,status = ? WHERE vehicle_id = ?");
 
             pstm.setString(1,vehicleDTO.getVehicle_name());
             pstm.setString(2,vehicleDTO.getVehicle_type());
@@ -239,8 +239,8 @@ public class VehicleFormController implements Initializable {
             pstm.setString(4,vehicleDTO.getCompany_id());
             pstm.setString(5,vehicleDTO.getReceive_date());
             pstm.setString(6,vehicleDTO.getReturn_date());
-            pstm.setString(7,vehicleDTO.getVehicle_id());
-            pstm.setString(8,"Active");
+            pstm.setString(7,"Active");
+            pstm.setString(8,vehicleDTO.getVehicle_id());
 
             int add = pstm.executeUpdate();
 
@@ -325,10 +325,33 @@ public class VehicleFormController implements Initializable {
     public void btnReturnVehicleOnAction(ActionEvent actionEvent) {
         Integer index = tblVehicle.getSelectionModel().getSelectedIndex();
         if (index <= -1) {
+            new Alert(Alert.AlertType.WARNING , "Please CLick Row !!").show();
             return;
         }
         String id = colVehicle_id.getCellData(index).toString();
+        setReturned(id);
 
+    }
+
+    private void setReturned(String id) {
+            try {
+                Connection connection = DBConnection.getInstance().getConnection();
+                PreparedStatement pstm = connection.prepareStatement("UPDATE Vehicle SET " + "status = ? WHERE vehicle_id = ?");
+
+                pstm.setString(1,"Returned");
+                pstm.setString(2,id);
+
+                int add = pstm.executeUpdate();
+
+                if (add > 0){
+                    new Alert(Alert.AlertType.CONFIRMATION,"Updated", ButtonType.OK).show();
+                }else {
+                    new Alert(Alert.AlertType.WARNING,"Try agin", ButtonType.OK).show();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            getAll();
     }
 
     public void txtVehicleIdOnKeyReleased(KeyEvent keyEvent) {

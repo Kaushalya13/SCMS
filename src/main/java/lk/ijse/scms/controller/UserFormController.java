@@ -182,7 +182,7 @@ public class UserFormController implements Initializable {
         UserDTO userDTO = new UserDTO(txtId.getText(), txtName.getText(), txtPassword.getText(), (String) cmbRanks.getValue(), txtEmail.getText(), txtNic.getText(), txtContact_no.getText());
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("UPDATE User SET " + "user_name = ?,password = ?,ranks = ?,email = ?,nic = ?,contact_no = ? WHERE user_id = ?");
+            PreparedStatement pstm = connection.prepareStatement("UPDATE User SET " + " user_name = ?,password = ?,ranks = ?,email = ?,nic = ?,contact_no = ? WHERE user_id = ?");
 
             pstm.setString(1,userDTO.getUser_name());
             pstm.setString(2,userDTO.getPassword());
@@ -260,7 +260,7 @@ public class UserFormController implements Initializable {
         Regex.setTextColor(TextFields.LANKAN_ID,txtNic);
     }
 
-    public void txtPasswordOnKeyReleased(KeyEvent keyEvent) { Regex.setTextColor(TextFields.PASSWORD,txtPassword); }
+    //public void txtPasswordOnKeyReleased(KeyEvent keyEvent) { Regex.setTextColor(TextFields.PASSWORD,txtPassword); }
 
     public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
         Regex.setTextColor(TextFields.EMAIL,txtEmail);
@@ -274,7 +274,7 @@ public class UserFormController implements Initializable {
         if(!Regex.setTextColor(TextFields.INVOICE,txtId))return false;
         if(!Regex.setTextColor(TextFields.NAME,txtName))return false;
         if(!Regex.setTextColor(TextFields.LANKAN_ID,txtNic))return false;
-        if(!Regex.setTextColor(TextFields.PASSWORD,txtPassword))return false;
+        //if(!Regex.setTextColor(TextFields.PASSWORD,txtPassword))return false;
         if(!Regex.setTextColor(TextFields.EMAIL,txtEmail))return false;
         if(!Regex.setTextColor(TextFields.PHONE,txtContact_no))return false;
         return true;

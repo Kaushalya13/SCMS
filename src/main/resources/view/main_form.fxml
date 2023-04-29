@@ -15,7 +15,7 @@
       <AnchorPane fx:id="loadFormContext" layoutX="241.0" layoutY="120.0" prefHeight="655.0" prefWidth="1261.0" />
       <AnchorPane layoutX="-1.0" layoutY="120.0" prefHeight="655.0" prefWidth="236.0" styleClass="linear-square1" stylesheets="@../style/Style.css">
          <children>
-            <JFXButton alignment="TOP_LEFT" layoutX="1.0" layoutY="1.0" onAction="#btnDashboradOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      DashBorad" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="-1.0" layoutY="49.0" onAction="#btnDashboradOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="      DashBorad" textFill="WHITE">
                <font>
                   <Font name="Arial Narrow" size="20.0" />
                </font>
@@ -71,18 +71,6 @@
                   <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../Final%20Project/images/icons8-company-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutY="61.0" onAction="#btnLoginrecodeOnAction" prefHeight="60.0" prefWidth="240.0" ripplerFill="BLACK" text="     LoginRecode" textFill="#fffefe">
-               <font>
-                  <Font name="Arial Narrow" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../Final%20Project/images/icons8-supplier-50.png" />
                      </image>
                   </ImageView>
                </graphic>

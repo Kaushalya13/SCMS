@@ -88,14 +88,14 @@ public class MainFormController implements Initializable {
         loadFormContext.getChildren().add(load);
     }
 
-    public void btnLoginrecodeOnAction(ActionEvent actionEvent) throws IOException {
+    /*public void btnLoginrecodeOnAction(ActionEvent actionEvent) throws IOException {
         URL resource = getClass().getResource("/view/loginrecode_form.fxml");
         assert resource != null;
         Parent load = FXMLLoader.load(resource);
         loadFormContext.getChildren().clear();
         loadFormContext.getChildren().add(load);
 
-    }
+    }*/
 
     public void btnCompanyOnAction(ActionEvent actionEvent) throws IOException {
         URL resource = getClass().getResource("/view/company_form.fxml");

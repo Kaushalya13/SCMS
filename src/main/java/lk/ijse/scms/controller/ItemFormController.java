@@ -19,6 +19,10 @@ import lk.ijse.scms.dto.tm.ItemTM;
 import lk.ijse.scms.model.ItemModel;
 import lk.ijse.scms.util.Regex;
 import lk.ijse.scms.util.TextFields;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,6 +77,9 @@ public class ItemFormController implements Initializable {
     private TableColumn<?, ?> colQtyOnStock;
 
     public AnchorPane loadFormContext;
+
+    @FXML
+    private TextField txtItem_place;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -230,5 +237,12 @@ public class ItemFormController implements Initializable {
         if(!Regex.setTextColor(TextFields.DOUBLE,txtUnitPrice))return false;
         if(!Regex.setTextColor(TextFields.INTEGER,txtQtyOnStock))return false;
         return true;
+    }
+
+    public void CreateBillOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        JasperDesign jasDesign = JRXmlLoader.load("src\\main\\resources\\reports\\Item.jrxml");
+        JasperReport jasReport = JasperCompileManager.compileReport(jasDesign);
+        JasperPrint jasPrint = JasperFillManager.fillReport(jasReport, null, DBConnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasPrint,false);
     }
 }

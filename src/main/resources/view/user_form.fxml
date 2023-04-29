@@ -48,7 +48,7 @@
          <font>
             <Font name="Arial" size="15.0" />
          </font></Label>
-      <JFXTextField fx:id="txtPassword" layoutX="677.0" layoutY="109.0" onKeyReleased="#txtPasswordOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
+      <JFXTextField fx:id="txtPassword" layoutX="677.0" layoutY="109.0" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXTextField fx:id="txtId" layoutX="63.0" layoutY="109.0" onKeyReleased="#txtUserIDOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXTextField fx:id="txtNic" layoutX="372.0" layoutY="219.0" onKeyReleased="#txtNicOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
       <JFXTextField fx:id="txtName" layoutX="372.0" layoutY="109.0" onKeyReleased="#txtUserNameOnKeyReleased" prefHeight="33.0" prefWidth="211.0" style="-fx-border-color: blue;" />
